@@ -1,5 +1,5 @@
 # typescript-tutorials
-## Persiapan dan Pengenalan
+## Program pertama
 1. Download dan Install Node js
   https://nodejs.org/en <br>
   ### cara 1
