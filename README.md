@@ -1,2 +1,2 @@
 # typescript-tutorials
-## Program Pertama Typescript
+## Basic Type
