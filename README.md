@@ -18,18 +18,18 @@
   tsc --init
   ```
   - ubah isi file package.json
-  ```
-   "scripts": {
+  ```json
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc -w",
     "dev": "nodemon src/index.ts"
   },
   ```
   - Ubah file tsconfig.json
-  ```
+  ```json
   "allowJs": true,  
   "outDir": "./build", 
-  ```
+  ```bash
   - jalankan script di bawah pada 2 terminal
   ```
   npm run tsc
