@@ -2,7 +2,7 @@
 ## Persiapan dan Pengenalan
 1. Download dan Install Node js
   https://nodejs.org/en <br>
-  
+  ### cara 1
   - Install Typescript
   ```
   node -v
@@ -34,4 +34,12 @@
   ```bash
   npm run tsc
   npm run dev
+  ```
+  ### cara 2 
+  - jalankan file 
+  ```
+  tsc /directory/nama_file.ts
+  node /directory/nama_file.js
+  
+  ts-node /dir/nama_file.ts
   ```
