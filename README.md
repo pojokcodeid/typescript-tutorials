@@ -3,9 +3,35 @@
 1. Download dan Install Node js
   https://nodejs.org/en <br>
   
-  cek NodeJs
+  - Install Typescript
   ```
+  node -v
+  npm -v
+  
   npm install -g typescript
   tsc --v
+  
   npm install -g ts-node
+  npm install -g nodemon
+  
+  npm init
+  tsc --init
+  ```
+  - ubah isi file package.json
+  ```
+   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc -w",
+    "dev": "nodemon src/index.ts"
+  },
+  ```
+  - Ubah file tsconfig.json
+  ```
+  "allowJs": true,  
+  "outDir": "./build", 
+  ```
+  - jalankan script di bawah pada 2 terminal
+  ```
+  npm run tsc
+  npm run dev
   ```
