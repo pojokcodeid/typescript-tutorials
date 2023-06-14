@@ -1,4 +1,4 @@
-# typescript part-01-pengenalan
+# typescript-tutorials
 ## Persiapan dan Pengenalan
 1. Download dan Install Node js
   https://nodejs.org/en <br>
