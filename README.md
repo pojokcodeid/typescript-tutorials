@@ -29,9 +29,9 @@
   ```json
   "allowJs": true,  
   "outDir": "./build", 
-  ```bash
-  - jalankan script di bawah pada 2 terminal
   ```
+  - jalankan script di bawah pada 2 terminal
+  ```bash
   npm run tsc
   npm run dev
   ```
