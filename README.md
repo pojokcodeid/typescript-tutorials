@@ -9,4 +9,5 @@
  2. Install Visual Studio Cod
   https://code.visualstudio.com/ 
   - install extensi live server atau live preview
+  - install code runner
   
