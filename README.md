@@ -43,3 +43,8 @@
   
   ts-node /dir/nama_file.ts
   ```
+  ### cara 3 
+  - jalankan menggunakan code runner
+  
+  ### cara 4
+  - install deno
