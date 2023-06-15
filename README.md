@@ -10,4 +10,10 @@
   https://code.visualstudio.com/ 
   - install extensi live server atau live preview
   - install code runner
+  - error lens
+  - prettier
+  - material icon
+  - fluent icon
+  - eva theme
+  - Bracket Pair Color DLW
   
