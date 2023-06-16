@@ -27,8 +27,18 @@
   ```
   - Ubah file tsconfig.json
   ```json
+  "rootDir": "./src"  // mendeklarasikan sfesifik directory
   "allowJs": true,  
   "outDir": "./build", 
+   "noEmitOnError": true, // dugunakan untuk disable compile jika ada warning atau error
+   
+   "target": "es2016" //ubah menjadi ES5 jika ingin menggunakan standar sebelum ES6
+  ```
+  - tambahkan code berikut pada bagian paling bawah dari tsconfig.json jika ingin hanya folder tertentu yang di compile
+  ```
+  ---- disini code paling akhir dari sebelumnya ----
+  },
+  "include": ["src"]
   ```
   - jalankan script di bawah pada 2 terminal
   ```bash
