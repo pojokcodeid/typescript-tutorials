@@ -1,5 +1,5 @@
 # TYPESCRIPT
-
+![cover!](cover.png)
 ## DAFTAR ISI
 
 - [Sejarah Typescript](#SEJARAH-TYPESCRIPT)
