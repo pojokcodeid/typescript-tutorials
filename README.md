@@ -6,6 +6,46 @@
 - [Versi Typescript](#VERSI-TYPESCRIPT)
 - [Menyiapkan Environement](#MENYIAPKAN-ENVIRONEMENT)
 - [Apa itu Type di TYPESCRIPT](#APA-ITU-TYPE-DI-TYPESCRIPT)
+- [TypeScript Annotations](#TypeScript-Annotations)
+- [Cara Membuat Variabel](#CARA-MEMBUAT-VARIABEL)
+- [Impicit dan Explicit Variable](#IMPICIT-DAN-EXPLICIT-VARIABLE)
+- [Type Data Primitif](#TYPE-DATA-PRIMITIF)
+- [Type Data Objek](#TYPE-DATA-OBJEK)
+- [Type Data Tuples](#TYPE-DATA-TUPLES)
+- [Type Data Enum](#TYPE-DATA-ENUM)
+- [Type Data Union](#TYPE-DATA-UNION)
+- [Type Data Any](#TYPE-DATA-ANY)
+- [Type Data Never](#TYPE-DATA-NEVER)
+- [Type Data Alias](#TYPE-DATA-ALIAS)
+- [Type Data String Literal](#TYPE-DATA-STRING-LITERAL)
+- [Type Data Void](#TYPE-DATA-VOID)
+- [Operasi IF](#OPERASI-IF)
+- [Operasi SWITCH](#OPERASI-SWITCH)
+- [Operasi FOR LOOP](#OPERASI-FOR-LOOP)
+- [Operasi WHILE LOOP](#OPERASI-WHILE-LOOP)
+- [Operasi BREAK](#OPERASI-BREAK)
+- [FUNCTION](#FUNCTION)
+- [FUNCTION TYPES](#FUNCTION-TYPES)
+- [OPTIONAL PARAMETER](#OPTIONAL-PARAMETER)
+- [DEFAULT PARAMETER](#DEFAULT-PARAMETER)
+- [REST PARAMETER](#REST-PARAMETER)
+- [FUNCTION OVERLOADING](#FUNCTION-OVERLOADING)
+- [CLASS](#CLASS)
+- [ACCESS MODIFIER](#ACCESS-MODIFIER)
+- [READONLY PROPERTY](#READONLY-PROPERTY)
+- [INHERITANCE](#INHERITANCE)
+- [STATIC METHOD DAN PROPERTIES](#STATIC-METHOD-DAN-PROPERTIES)
+- [ABSTRACT CLASS](#ABSTRACT-CLASS)
+- [INTERFACES](#INTERFACES)
+- [EXTENDING INTERFACES](#EXTENDING-INTERFACES)
+- [INTERSECTION TYPES](#INTERSECTION-TYPES)
+- [TYPE GUARDS](#TYPE-GUARDS)
+- [TYPE CASTING](#TYPE-CASTING)
+- [TYPE ASSERTIONS](#TYPE-ASSERTIONS)
+- [GENERIC TYPES](#GENERIC-TYPES)
+- [GENERIC CONSTRAINTS](#GENERIC-CONSTRAINTS)
+- [GENERIC INTERFACES](#GENERIC-INTERFACES)
+- [GENERIC CLASSES](#GENERIC-CLASSES)
 
 ## SEJARAH TYPESCRIPT
 
@@ -134,7 +174,7 @@ Kesimpulannya, di TypeScript:
 - type adalah label yang menjelaskan berbagai properti dan metode yang dimiliki suatu nilai
 - setiap nilai memiliki tipe.
 
-# TypeScript Annotations
+## TYPESCRIPT ANNOTATIONS
 
 TypeScript Annotations adalah fitur yang memungkinkan kita untuk memberikan informasi tambahan tentang tipe data yang diharapkan oleh variabel, fungsi, objek, dan lain-lain. Annotations menggunakan bentuk @expression, di mana expression harus menghasilkan sebuah fungsi yang akan dipanggil saat runtime dengan informasi tentang deklarasi yang diberi annotation.
 
@@ -175,7 +215,7 @@ class Contoh {
 }
 ```
 
-# Cara Membuat Variable
+## CARA MEMBUAT VARIABEL
 
 Cara menuliskan variabel di TypeScript adalah dengan menggunakan kata kunci **let**, **const**, atau **var**. Kata kunci **let** dan **const** adalah cara baru untuk mendeklarasikan variabel di TypeScript yang lebih disarankan daripada menggunakan kata kunci **var**. Perbedaan antara **let** dan **const** adalah bahwa **let** dapat diubah nilainya, sedangkan **const** tidak.
 
@@ -217,7 +257,7 @@ let b = "Hello"; //Type data string
 let c = true; //Type data boolean
 ```
 
-# Implicit dan explicit variable
+## IMPICIT DAN EXPLICIT VARIABLE
 
 Implicit dan explicit variable di TypeScript adalah dua cara untuk menentukan type data dari sebuah variabel. Implicit variable adalah variabel yang type datanya ditentukan secara otomatis oleh TypeScript berdasarkan nilai yang diberikan. Explicit variable adalah variabel yang type datanya ditentukan secara manual oleh programmer dengan menggunakan anotasi type.
 
@@ -239,7 +279,7 @@ let z: boolean = true; //Type data boolean
 
 Keuntungan dari menggunakan implicit variable adalah lebih fleksibel dan hemat waktu, karena tidak perlu menulis type data secara eksplisit. Keuntungan dari menggunakan explicit variable adalah lebih jelas dan mudah dibaca, karena type data terlihat secara eksplisit. Selain itu, explicit variable juga dapat mencegah kesalahan penulisan type data yang tidak sesuai dengan nilai yang diberikan.
 
-# Type Data Primitif
+## TYPE DATA PRIMITIF
 
 Type data primitif di TypeScript adalah type data yang memiliki nilai yang tidak dapat diubah atau dimodifikasi. Type data primitif di TypeScript adalah:
 
@@ -303,7 +343,7 @@ let u: undefined;
 u = undefined; //Nilai undefined
 ```
 
-# Type Data Object
+## TYPE DATA OBJEK
 
 Tipe data objek di JavaScript adalah tipe data yang digunakan untuk menyimpan koleksi data atau entitas yang lebih kompleks. Objek bisa berisi properti dan metode yang menggambarkan karakteristik dan perilaku objek tersebut.
 
@@ -376,7 +416,7 @@ dog.bark = function () {
 };
 ```
 
-# Tipa Data Tuples
+## TYPE DATA TUPLES
 
 Tipe data tuple di TypeScript adalah tipe data yang digunakan untuk merepresentasikan kumpulan data dengan tipe yang berbeda-beda dan jumlah yang tetap. Tuple mirip dengan array, tetapi memiliki beberapa perbedaan, yaitu:
 
@@ -402,7 +442,7 @@ let numbers: [first: number, second: number, ...rest: number[]] = [
 ];
 ```
 
-# Typem Data Enum
+## TYPE DATA ENUM
 
 Tipe data enum di TypeScript adalah tipe data yang digunakan untuk merepresentasikan himpunan nilai konstan yang sudah ditentukan sebelumnya. Enum memungkinkan kita untuk memberikan nama yang bermakna untuk nilai-nilai tersebut, sehingga lebih mudah untuk mendokumentasikan maksud atau membuat sekumpulan kasus yang berbeda. TypeScript menyediakan enum numerik dan string, atau bahkan keduanya.
 
@@ -436,7 +476,7 @@ let col: Color = Color.Red;
 let ans: BooleanLikeHeterogeneousEnum = BooleanLikeHeterogeneousEnum.Yes;
 ```
 
-# Type Data Union
+## TYPE DATA UNION
 
 Tipe data union di TypeScript adalah tipe data yang digunakan untuk merepresentasikan nilai yang bisa memiliki salah satu dari beberapa tipe yang sudah ditentukan sebelumnya. Union memungkinkan kita untuk memberikan fleksibilitas dan ekspresivitas dalam kode, karena sebuah variabel atau parameter fungsi bisa memiliki lebih dari satu tipe.
 
@@ -470,7 +510,7 @@ printStatusCode(404);
 printStatusCode(true); // Error: Argument of type 'boolean' is not assignable to parameter of type 'string | number'
 ```
 
-# Type Data Any
+## TYPE DATA ANY
 
 Tipe data any di TypeScript adalah tipe data yang digunakan untuk merepresentasikan nilai yang bisa memiliki tipe apapun. Tipe data any digunakan ketika kita berurusan dengan program pihak ketiga dan mengharapkan variabel apapun tetapi kita tidak tahu tipe pasti dari variabel tersebut. Tipe data any digunakan karena membantu kita untuk memilih dan meninggalkan pemeriksaan tipe saat kompilasi.
 
@@ -491,7 +531,7 @@ let arr: any[] = ["John", 212, true];
 arr.push("Smith");
 ```
 
-# Type Data Never
+## TYPE DATA NEVER
 
 Tipe data never di TypeScript adalah tipe data yang digunakan untuk merepresentasikan nilai yang tidak pernah terjadi. Tipe data never digunakan ketika kita yakin bahwa sesuatu tidak akan pernah terjadi. Misalnya, kita menulis sebuah fungsi yang tidak akan pernah mengembalikan nilai atau selalu melempar sebuah eksepsi.
 
@@ -519,7 +559,7 @@ nothing = 0; // Error: Type 'number' is not assignable to type 'never'
 nothing = "hello"; // Error: Type 'string' is not assignable to type 'never'
 ```
 
-# Type Data Alias
+## TYPE DATA ALIAS
 
 Tipe data alias di TypeScript adalah kemampuan untuk memberikan nama alternatif atau alias untuk tipe data yang sudah ada di TypeScript. Dengan menggunakan tipe data alias, kita dapat membuat tipe data yang lebih mudah dimengerti dan digunakan di seluruh kode program.
 
@@ -555,7 +595,7 @@ let user: User = {
 };
 ```
 
-# Type String Literal
+## TYPE DATA STRING LITERAL
 
 TypeScript String Literal tipe adalah tipe data yang digunakan untuk merepresentasikan nilai string yang pasti. Tipe data ini memiliki sintaks yang sama dengan string literal di JavaScript, tetapi digunakan di posisi tipe. Dengan menggunakan tipe data ini, kita dapat membatasi nilai string yang bisa diterima oleh variabel, fungsi, objek, dan lain-lain.
 
@@ -586,7 +626,7 @@ greet("Good morning"); // OK
 greet("Bye"); // Error: Argument of type '"Bye"' is not assignable to parameter of type '"Hello" | "Hi" | "Good morning"'
 ```
 
-# Type Data Void
+## TYPE DATA VOID
 
 Tipe data void di TypeScript adalah tipe data yang digunakan untuk merepresentasikan nilai kembalian dari fungsi yang tidak mengembalikan nilai apa-apa atau pernyataan return yang tidak mengembalikan apa-apa. Tipe data ini biasanya digunakan sebagai tipe kembalian dari fungsi yang hanya melakukan suatu aksi tanpa menghasilkan suatu nilai.
 
@@ -617,7 +657,7 @@ nothing = "hello"; // Error: Type 'string' is not assignable to type 'void'
 
 - rujukan https://www.typescriptlang.org/docs/handbook/basic-types.html
 
-# Operasi If
+## OPERASI IF
 
 TypeScript if adalah pernyataan yang digunakan untuk mengeksekusi suatu blok kode berdasarkan kondisi tertentu. Jika kondisi bernilai true, maka blok kode di dalam if akan dieksekusi. Jika kondisi bernilai false, maka blok kode di dalam if akan dilewati.
 
@@ -686,7 +726,7 @@ x > y
   : console.log("x is less than or equal to y");
 ```
 
-# Oprasi Switch
+## OPERASI SWITCH
 
 TypeScript switch adalah pernyataan yang digunakan untuk mengeksekusi salah satu dari beberapa blok kode berdasarkan nilai atau ekspresi tertentu. Switch memungkinkan kita untuk menulis kode yang lebih rapi dan mudah dibaca daripada menggunakan if...else if...else yang berulang-ulang.
 
@@ -788,7 +828,7 @@ switch (month) {
 }
 ```
 
-# Oprasi For Loop
+## OPERASI FOR LOOP
 
 TypeScript for loop adalah perulangan yang digunakan untuk mengeksekusi suatu blok kode secara berulang-ulang selama kondisi tertentu terpenuhi. For loop memiliki sintaks yang terdiri dari tiga bagian, yaitu inisialisasi, kondisi, dan inkremen.
 
@@ -848,7 +888,7 @@ for (let key in person) {
 }
 ```
 
-# Oprasi While Loop
+## OPERASI WHILE LOOP
 
 TypeScript while loop adalah perulangan yang digunakan untuk mengeksekusi suatu blok kode selama kondisi tertentu bernilai truthy. While loop akan mengevaluasi kondisi sebelum memasuki blok kode. Jika kondisi bernilai truthy, maka blok kode akan dieksekusi. Jika kondisi bernilai falsy, maka perulangan akan berhenti.
 
@@ -890,7 +930,7 @@ do {
 } while (i <= 5); // Kondisi yang dievaluasi setelah blok kode
 ```
 
-# Oprasi Break
+## OPERASI BREAK
 
 TypeScript break adalah pernyataan yang digunakan untuk menghentikan atau keluar dari suatu perulangan, switch, atau blok berlabel. Break berguna untuk mengakhiri perulangan lebih awal ketika kondisi tertentu terjadi. Break akan memindahkan kontrol program ke pernyataan selanjutnya setelah perulangan, switch, atau blok berlabel.
 
@@ -935,7 +975,7 @@ switch (day) {
 }
 ```
 
-# FUNCTION
+## FUNCTION
 
 Functions di TypeScript adalah blok kode yang dapat dipanggil berulang kali dengan memberikan input dan menghasilkan output. Functions di TypeScript dapat didefinisikan dengan sintaks yang sama dengan JavaScript, yaitu menggunakan kata kunci function, atau dengan menggunakan arrow function.
 
@@ -981,7 +1021,7 @@ console.log(greet("Budi")); // Hello, Budi
 
 Functions di TypeScript juga dapat memiliki parameter opsional, parameter default, parameter rest, dan lain-lain.
 
-# FUNCTION TYPES
+## FUNCTION TYPES
 
 Function Types di TypeScript adalah tipe data yang digunakan untuk mendeskripsikan tipe dari fungsi, yaitu parameter dan nilai kembalian. Function Types dapat ditulis dengan menggunakan function type expression, call signature, construct signature, atau type alias.
 
@@ -1067,7 +1107,7 @@ add = function (a: number, b: number) {
 console.log(add(2, 3)); // 5
 ```
 
-# OPTIONAL PARAMETER
+## OPTIONAL PARAMETER
 
 Optional Parameters di TypeScript adalah parameter yang dapat diabaikan saat memanggil fungsi. Optional Parameters ditandai dengan tanda tanya (?) setelah nama parameter. TypeScript tidak akan memeriksa jumlah dan tipe argumen untuk parameter opsional, tetapi hanya untuk parameter yang wajib. Parameter opsional yang tidak diberikan nilai akan mendapatkan nilai undefined.
 
@@ -1104,7 +1144,7 @@ function multiply(a?: number, b: number): number {
 }
 ```
 
-# DEFAULT PARAMETER
+## DEFAULT PARAMETER
 
 Default Parameters di TypeScript adalah parameter yang memiliki nilai awal yang ditentukan jika parameter tersebut tidak diberikan nilai atau bernilai undefined saat memanggil fungsi. Default Parameters dapat ditulis dengan menggunakan tanda sama dengan (=) diikuti dengan nilai default setelah tipe data parameter. TypeScript juga dapat menentukan tipe data parameter default dari nilai default tersebut. Default Parameters dapat membantu kita menghindari memberikan nilai parameter yang berulang-ulang atau tidak perlu saat memanggil fungsi.
 
@@ -1172,7 +1212,7 @@ console.log(getDay(undefined, 2)); // bergantung pada tahun saat ini
 console.log(getDay()); // Error: Expected at least one argument, but got zero.
 ```
 
-# REST PARAMETER
+## REST PARAMETER
 
 Rest Parameters di TypeScript adalah parameter yang memungkinkan kita untuk menerima nol atau lebih argumen dengan tipe data tertentu sebagai sebuah array. Rest Parameters berguna ketika jumlah parameter tidak diketahui atau dapat bervariasi. Rest Parameters dikelompokkan ke dalam sebuah variabel tunggal yang dapat diakses sebagai sebuah array di dalam fungsi. Sebuah fungsi hanya dapat memiliki satu rest parameter, dan rest parameter harus muncul terakhir dalam daftar parameter.
 
@@ -1217,7 +1257,7 @@ console.log(greet("Budi")); // Hello, Budi!
 console.log(greet("Budi", "Ani")); // Hello, Budi, Ani!
 ```
 
-# FUNCTION OVERLOADING
+## FUNCTION OVERLOADING
 
 Function Overloadings di TypeScript adalah cara untuk mendefinisikan beberapa fungsi dengan nama yang sama tetapi dengan tanda tangan (signature) yang berbeda, yaitu parameter dan tipe data kembalian. Function Overloadings berguna ketika kita ingin menulis fungsi yang dapat dipanggil dengan berbagai cara dengan parameter yang berbeda-beda atau tipe data kembalian yang berbeda-beda. Fungsi yang tepat untuk dipanggil akan ditentukan pada saat runtime berdasarkan argumen yang diberikan.
 
@@ -1273,7 +1313,7 @@ console.log(calc.calculate(2, 3, "+")); // 5
 console.log(calc.calculate(2, 3, "-")); // -1
 ```
 
-# CLASS
+## CLASS
 
 Class di TypeScript adalah struktur data yang digunakan untuk membuat objek dengan properti dan metode tertentu. Class di TypeScript mendukung fitur-fitur yang diperkenalkan di ES2015, seperti constructor, inheritance, accessor, static, abstract, dan lain-lain. Selain itu, TypeScript juga menambahkan anotasi tipe dan sintaks lain untuk memungkinkan kita mengekspresikan hubungan antara class dan tipe lain.
 
@@ -1367,7 +1407,7 @@ c1.id = "c3"; // Cannot assign to 'id' because it is a read-only property.
 c1.value = 10; // Property 'value' is private and only accessible within class 'Counter'.
 ```
 
-# ACCESS MODIFIER
+## ACCESS MODIFIER
 
 Access Modifiers di TypeScript adalah kata kunci yang digunakan untuk mengatur tingkat akses atau visibilitas properti dan metode dalam class. Access Modifiers dapat membantu kita untuk menerapkan prinsip enkapsulasi dan pewarisan dalam pemrograman berorientasi objek. TypeScript menyediakan tiga jenis Access Modifiers, yaitu:
 
@@ -1435,7 +1475,7 @@ person.getAge(); // Error: Property 'getAge' is private and only accessible with
 person.getGender(); // Error: Property 'getGender' is protected and only accessible within class 'Person' and its subclasses.
 ```
 
-# READONLY PROPERTY
+## READONLY PROPERTY
 
 Readonly Properties di TypeScript adalah properti yang hanya dapat dibaca, tidak dapat ditulis atau diubah nilainya. Readonly Properties berguna untuk mencegah modifikasi yang tidak disengaja atau tidak diinginkan terhadap properti tertentu dalam class, interface, atau type alias. Readonly Properties dapat ditulis dengan menggunakan kata kunci readonly sebelum nama properti. Readonly Properties hanya dapat diberi nilai saat deklarasi atau di dalam constructor class.
 
@@ -1498,7 +1538,7 @@ person.name = "Ani"; // Error: Cannot assign to 'name' because it is a read-only
 person.hobbies.push("gaming"); // Error: Property 'push' does not exist on type 'readonly string[]'.
 ```
 
-# INHERITANCE
+## INHERITANCE
 
 Inheritance di TypeScript adalah konsep pemrograman berorientasi objek yang memungkinkan sebuah kelas untuk memperoleh properti dan metode dari kelas lain. Kelas yang mewarisi disebut kelas anak atau kelas turunan, dan kelas yang diwarisi dari disebut kelas induk atau kelas super. Inheritance di TypeScript dapat memperluas atau memodifikasi fungsionalitas kelas yang ada dengan menambahkan properti dan metode baru. Inheritance di TypeScript menggunakan sintaks berbasis kelas, yang merupakan cara sederhana untuk menulis inheritance prototipal, model inheritance asli JavaScript.
 
@@ -1535,7 +1575,7 @@ let kucing = new Kucing("Mimi", "Putih");
 kucing.bersuara(); // Meong
 ```
 
-# STATIC METHOD DAN PROPERTIES
+## STATIC METHOD DAN PROPERTIES
 
 Static Methods and Properties di TypeScript adalah metode dan properti yang tersedia dalam sebuah kelas tanpa objek instans. Mereka dapat diakses dengan sintaks ClassName.propertyName atau Class.methodName. Berbeda dengan properti instans, properti statis bersifat bersama di antara semua instans kelas. Untuk mendeklarasikan properti statis, Anda menggunakan kata kunci static.
 
@@ -1555,7 +1595,7 @@ console.log(Matematika.phi); // 3.14
 console.log(Matematika.luasLingkaran(10)); // 314
 ```
 
-# ABSTRACT CLASS
+## ABSTRACT CLASS
 
 Abstract Classes di TypeScript adalah kelas yang dideklarasikan dengan kata kunci abstract. Kelas ini mungkin memiliki beberapa metode atau deklarasi yang belum diimplementasikan, yang disebut metode abstract. Kelas ini tidak dapat diinstansiasi secara langsung, tetapi dapat diturunkan oleh kelas lain yang menyediakan implementasi spesifik dari metode-metodenya. Ini adalah cara untuk menerapkan abstraksi 0 hingga 100%.
 
@@ -1591,7 +1631,7 @@ let mobil = new Mobil("Toyota");
 mobil.klakson(); // Telolet
 ```
 
-# INTERFACES
+## INTERFACES
 
 Interfaces di TypeScript adalah tipe abstrak yang mendeskripsikan bentuk dari sebuah objek, yaitu properti apa saja yang dimilikinya dan tipe data apa saja yang dapat diterimanya. Interfaces berperan sebagai kontrak untuk kelas, fungsi, atau objek yang mengimplementasikannya, artinya mereka harus mengikuti sintaks yang ditentukan oleh interfaces. Interfaces tidak menghasilkan kode apapun atau memiliki biaya runtime, tetapi mereka membantu dengan pengecekan tipe dan pencegahan kesalahan. TypeScript menggunakan kata kunci interface untuk mendefinisikan interfaces.
 
@@ -1621,7 +1661,7 @@ let budi: Mahasiswa = {
 cetakData(budi); // Nama: Budi, NIM: 123456, Jurusan: Informatika
 ```
 
-# EXTENDING INTERFACES
+## EXTENDING INTERFACES
 
 Extending Interfaces di TypeScript adalah cara untuk membuat interface baru yang mewarisi properti dan metode dari interface lain. Ini berguna untuk membuat interface yang lebih spesifik atau generik dari interface yang ada. Extending Interfaces di TypeScript menggunakan kata kunci extends dan dapat mewarisi dari satu atau lebih interface sekaligus dengan memisahkannya dengan koma. Extending Interfaces juga dapat diterapkan pada kelas, yang berperilaku sebagai interface tanpa eksekusi.
 
@@ -1657,7 +1697,7 @@ avanza.bergerak(); // Mobil bergerak
 avanza.klakson(); // Telolet
 ```
 
-# INTERSECTION TYPES
+## INTERSECTION TYPES
 
 Intersection Types di TypeScript adalah tipe data yang menggabungkan dua atau lebih tipe data lainnya dengan menggunakan operator &. Intersection Types memungkinkan kita untuk membuat tipe data yang memiliki semua properti dan metode dari tipe data yang digabungkan. Intersection Types berguna untuk membuat tipe data yang lebih spesifik atau kompleks dari tipe data yang ada.
 
@@ -1691,7 +1731,7 @@ console.log(karyawan1.nama); // Andi
 console.log(karyawan1.jabatan); // Programmer
 ```
 
-# TYPE GUARDS
+## TYPE GUARDS
 
 Type Guards di TypeScript adalah teknik untuk mendapatkan informasi tentang tipe dari sebuah variabel, biasanya di dalam blok kondisional atau fungsional. Type Guards biasanya berupa fungsi yang mengembalikan nilai boolean atau tipe variabel, yang memberitahu TypeScript apakah tipe variabel dapat dipersempit menjadi sesuatu yang lebih spesifik. Type Guards memiliki sifat khusus untuk menjamin bahwa nilai yang diuji adalah dari tipe tertentu tergantung pada nilai boolean yang dikembalikan. TypeScript menggunakan beberapa operator JavaScript bawaan seperti typeof, instanceof, dan operator in, yang digunakan untuk menentukan apakah sebuah objek memiliki properti tertentu. Type Guards memungkinkan kita untuk memberi instruksi kepada kompiler TypeScript untuk menyimpulkan tipe tertentu untuk sebuah variabel dalam konteks tertentu, sehingga memastikan bahwa tipe argumen adalah apa yang kita katakan.
 
@@ -1743,7 +1783,7 @@ cetakNama(andi); // Nama manusia: Andi
 cetakNama(kucing); // Nama hewan: Mimi
 ```
 
-# TYPE CASTING
+## TYPE CASTING
 
 Type Casting di TypeScript adalah proses untuk mengubah tipe dari sebuah variabel untuk memenuhi kompiler TypeScript. Hal ini dapat dilakukan dengan menggunakan kata kunci as atau operator <> . Hal ini terkadang diperlukan ketika tipe dari sebuah variabel tidak diketahui atau kompleks. Misalnya, untuk mengubah sebuah variabel dengan tipe unknown menjadi string, kita dapat menggunakan (text as string).length.
 
@@ -1764,7 +1804,7 @@ console.log(length); // 11
 console.log(length2); // 11
 ```
 
-# TYPE ASSERTIONS
+## TYPE ASSERTIONS
 
 Type Assertions di TypeScript adalah mekanisme yang memberitahu kompiler tentang tipe dari sebuah variabel. Type Assertions mirip dengan type casting, tetapi tidak mengubah atau memodifikasi tipe secara struktural. Type Assertions dapat berguna ketika memindahkan kode dari JavaScript atau ketika programmer tahu tipe yang lebih akurat daripada yang dapat disimpulkan oleh TypeScript. Type Assertions tidak memiliki efek pada waktu eksekusi.
 
@@ -1785,7 +1825,7 @@ console.log(length); // 11
 console.log(length2); // 11
 ```
 
-# GENERIC TYPES
+## GENERIC TYPES
 
 TypeScript Generics adalah konsep pemrograman yang memungkinkan kita untuk membuat komponen yang dapat bekerja dengan berbagai macam tipe data, bukan hanya satu tipe data. Dengan generics, kita dapat menulis kode yang dinamis dan dapat digunakan kembali. Selain itu, kita dapat menerapkan generics pada kelas, interface, dan fungsi. Generics di TypeScript menggunakan sintaks berbasis tipe variabel, yaitu variabel khusus yang bekerja pada tipe data, bukan nilai.
 
@@ -1807,7 +1847,7 @@ let output2 = identity<number>(42);
 let output3 = identity("World"); // output3 bertipe string
 ```
 
-# GENERIC CONSTRAINTS
+## GENERIC CONSTRAINTS
 
 Generic Constraints di TypeScript adalah cara untuk membatasi tipe data yang dapat digunakan sebagai tipe variabel pada generics. Dengan generic constraints, kita dapat menentukan syarat atau persyaratan tertentu yang harus dipenuhi oleh tipe variabel. Generic constraints di TypeScript menggunakan kata kunci extends dan dapat merujuk pada tipe data lain, termasuk kelas, interface, atau tipe variabel lain.
 
@@ -1832,7 +1872,7 @@ loggingIdentity({ length: 10, value: 3 }); // OK
 loggingIdentity(3); // Error, karena number tidak memiliki properti length
 ```
 
-# GENERIC INTERFACES
+## GENERIC INTERFACES
 
 Generic Interfaces di TypeScript adalah interface yang menggunakan tipe variabel sebagai salah satu anggotanya. Dengan generic interfaces, kita dapat mendeskripsikan bentuk dari sebuah objek, fungsi, atau metode yang dapat bekerja dengan berbagai macam tipe data. Generic interfaces di TypeScript menggunakan sintaks berbasis tipe variabel, yaitu variabel khusus yang bekerja pada tipe data, bukan nilai.
 
@@ -1861,7 +1901,7 @@ let np = new NumberProcessor();
 np.process(10, 20); // 30
 ```
 
-# GENERIC CLASSES
+## GENERIC CLASSES
 
 Generic Classes di TypeScript adalah kelas yang menggunakan tipe variabel sebagai salah satu anggotanya. Dengan generic classes, kita dapat membuat kelas yang dapat bekerja dengan berbagai macam tipe data, bukan hanya satu tipe data. Generic classes di TypeScript menggunakan sintaks berbasis tipe variabel, yaitu variabel khusus yang bekerja pada tipe data, bukan nilai.
 
