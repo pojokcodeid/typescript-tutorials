@@ -114,7 +114,7 @@ Untuk menyiapkan environment untuk TypeScript, Anda perlu menginstal Node.js dan
 ```json
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2016",
     "module": "commonjs",
     "outDir": "dist",
     "strict": true
