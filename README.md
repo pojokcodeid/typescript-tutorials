@@ -1,5 +1,9 @@
 # TYPESCRIPT
+
 ![cover!](cover.png)
+
+## CHECK BRANCH UNTUK FILE LATIHAN
+
 ## DAFTAR ISI
 
 - [Sejarah Typescript](#SEJARAH-TYPESCRIPT)
