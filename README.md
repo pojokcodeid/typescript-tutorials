@@ -8,6 +8,16 @@ Variabel adalah sebuah tempat untuk menyimpan nilai dalam program. Cara penulisa
 - Variabel bersifat case-sensitive, artinya membedakan huruf besar dan kecil. Misalnya, `nama` dan `Nama` adalah dua variabel yang berbeda.
 - Variabel harus diberi nama yang jelas dan deskriptif, sesuai dengan nilai atau fungsi yang disimpan.
 
+Cara menulis variabel dengan dua kata atau lebih di TypeScript adalah dengan menggunakan camelCase, yaitu cara penulisan dimana karakter pertama setiap kata ditulis dengan huruf besar, kecuali kata pertama. Contoh:
+
+```typescript
+let firstName = "Budi"; // variabel dengan satu kata
+let lastName = "Santoso"; // variabel dengan satu kata
+let fullName = firstName + " " + lastName; // variabel dengan dua kata
+let birthDate = new Date(2000, 1, 1); // variabel dengan dua kata
+let totalScore = 100; // variabel dengan dua kata
+```
+
 Cara menuliskan variabel di TypeScript adalah dengan menggunakan kata kunci **let**, **const**, atau **var**. Kata kunci **let** dan **const** adalah cara baru untuk mendeklarasikan variabel di TypeScript yang lebih disarankan daripada menggunakan kata kunci **var**. Perbedaan antara **let** dan **const** adalah bahwa **let** dapat diubah nilainya, sedangkan **const** tidak.
 
 Contoh menuliskan variabel dengan **let**:
