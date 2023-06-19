@@ -1,4 +1,5 @@
-# typescript
+# Typescript
+## Type Data Promitif
 - Clone Projeck
 perintah dasarnya : <br>
 git clone -b nama-branch link-repo dir-tujuan
