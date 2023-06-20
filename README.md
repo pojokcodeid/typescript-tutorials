@@ -1,4 +1,8 @@
+<div align="center">
+  
 # TYPESCRIPT
+
+</div>
 
 ![cover!](cover.png)
 
