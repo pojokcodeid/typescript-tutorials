@@ -4,38 +4,66 @@
 
 </div>
 
-## Array dan Tuples
+## Readonly Property
 
-TypeScript Array dan tuples adalah dua tipe data yang dapat digunakan untuk menyimpan kumpulan nilai. Namun, ada beberapa perbedaan antara array dan tuple dalam TypeScript. Berikut ini adalah beberapa perbedaan tersebut:
+Halo, ini adalah Bing. Saya dapat membantu Anda dengan pertanyaan Anda.😊
 
-- Tipe elemen: Dalam array, tipe elemen-elemen harus sama, sedangkan dalam tuple, setiap elemen dapat memiliki tipe yang berbeda¹.
-- Panjang: Array dapat memiliki panjang yang berubah, sedangkan tuple memiliki panjang tetap¹.
-- Metode: Array memiliki metode bawaan seperti push, pop, slice, dan lain-lain, sedangkan tuple tidak memiliki metode bawaan².
-- Akses elemen: Array dan tuple sama-sama dapat mengakses elemen dengan indeks numerik, tetapi tuple juga dapat mengakses elemen dengan label³.
-
-Berikut adalah contoh penggunaan TypeScript Array dan tuples:
+TypeScript READONLY PROPERTY adalah properti yang tidak dapat diubah setelah diinisialisasi. Properti yang ditandai dengan READONLY PROPERTY hanya dapat ditetapkan nilai saat deklarasi atau dari dalam konstruktor kelas yang sama. Semua penugasan lain tidak diperbolehkan¹. Untuk menambahkan READONLY PROPERTY ke properti, kita menggunakan kata kunci **readonly**². Contoh:
 
 ```ts
-// Membuat array dari tipe string
-let fruits: string[] = ["apple", "banana", "orange"];
+// Membuat kelas bernama Circle
+class Circle {
+  // Mendeklarasikan properti radius dengan modifier readonly
+  readonly radius: number;
 
-// Membuat tuple dari tipe string dan number
-let person: [name: string, age: number] = ["Alice", 20];
+  // Membuat konstruktor untuk menginisialisasi properti
+  constructor(radius: number) {
+    this.radius = radius;
+  }
 
-// Menambahkan elemen ke array dengan metode push
-fruits.push("mango"); // ["apple", "banana", "orange", "mango"]
+  // Membuat metode untuk menghitung luas lingkaran
+  getArea(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+}
 
-// Mengubah elemen array dengan indeks
-fruits[0] = "pear"; // ["pear", "banana", "orange", "mango"]
+// Membuat objek dari kelas Circle
+let circle = new Circle(10);
 
-// Mengakses elemen array dengan indeks
-console.log(fruits[1]); // banana
+// Mengakses properti radius
+console.log(circle.radius); // 10
 
-// Mengubah elemen tuple dengan indeks atau label
-person[0] = "Bob"; // ["Bob", 20]
-person.name = "Charlie"; // ["Charlie", 20]
+// Mengakses metode getArea
+console.log(circle.getArea()); // 314.1592653589793
 
-// Mengakses elemen tuple dengan indeks atau label
-console.log(person[1]); // 20
-console.log(person.age); // 20
+// Tidak dapat mengubah properti radius karena modifier readonly
+circle.radius = 20; // Error: Cannot assign to 'radius' because it is a read-only property.
+```
+
+Dalam contoh di atas, kita mendefinisikan kelas Circle dengan properti radius yang memiliki modifier readonly. Kita dapat menginisialisasi nilai radius melalui konstruktor, dan mengaksesnya melalui objek circle. Namun, kita tidak dapat mengubah nilai radius setelah objek circle dibuat, karena properti tersebut bersifat readonly.
+
+Contoh Readonly Properties dalam interface dan type alias adalah sebagai berikut:
+```ts
+// Mendefinisikan interface Person
+interface Person {
+  // Mendeklarasikan properti readonly name dengan tipe data string
+  readonly name: string;
+
+  // Mendeklarasikan properti readonly hobbies dengan tipe data ReadonlyArray<string>
+  readonly hobbies: ReadonlyArray<string>;
+}
+
+// Membuat objek dari interface Person
+let person: Person = {
+  name: "Budi",
+  hobbies: ["reading", "writing", "coding"],
+};
+
+// Mengakses properti name dan hobbies yang bersifat readonly
+console.log(person.name); // Budi
+console.log(person.hobbies); // ["reading", "writing", "coding"]
+
+// Mencoba mengubah properti name dan hobbies yang bersifat readonly
+person.name = "Ani"; // Error: Cannot assign to 'name' because it is a read-only property.
+person.hobbies.push("gaming"); // Error: Property 'push' does not exist on type 'readonly string[]'.
 ```
