@@ -4,38 +4,86 @@
 
 </div>
 
-## Array dan Tuples
+## Jenis Objek
 
-TypeScript Array dan tuples adalah dua tipe data yang dapat digunakan untuk menyimpan kumpulan nilai. Namun, ada beberapa perbedaan antara array dan tuple dalam TypeScript. Berikut ini adalah beberapa perbedaan tersebut:
+Jenis objek di TypeScript adalah tipe yang merepresentasikan nilai yang berupa objek, yaitu kumpulan dari properti yang memiliki nama dan nilai¹. Jenis objek di TypeScript dapat dibagi menjadi beberapa kategori, yaitu:
 
-- Tipe elemen: Dalam array, tipe elemen-elemen harus sama, sedangkan dalam tuple, setiap elemen dapat memiliki tipe yang berbeda¹.
-- Panjang: Array dapat memiliki panjang yang berubah, sedangkan tuple memiliki panjang tetap¹.
-- Metode: Array memiliki metode bawaan seperti push, pop, slice, dan lain-lain, sedangkan tuple tidak memiliki metode bawaan².
-- Akses elemen: Array dan tuple sama-sama dapat mengakses elemen dengan indeks numerik, tetapi tuple juga dapat mengakses elemen dengan label³.
-
-Berikut adalah contoh penggunaan TypeScript Array dan tuples:
+- **Objek literal**. Objek literal adalah objek yang ditulis secara langsung dengan menggunakan tanda kurung kurawal ({}) dan menuliskan nama dan nilai properti yang dimiliki objek tersebut¹. Contoh:
 
 ```ts
-// Membuat array dari tipe string
-let fruits: string[] = ["apple", "banana", "orange"];
+// Membuat objek literal dengan properti name dan age
+let person = { name: "Alice", age: 20 };
+```
 
-// Membuat tuple dari tipe string dan number
-let person: [name: string, age: number] = ["Alice", 20];
+- **Kelas**. Kelas adalah cetak biru atau rancangan untuk membuat objek. Kelas dapat memiliki properti dan metode yang mendefinisikan karakteristik dan perilaku objek. Kelas dapat dibuat dengan kata kunci **class**². Contoh:
 
-// Menambahkan elemen ke array dengan metode push
-fruits.push("mango"); // ["apple", "banana", "orange", "mango"]
+```ts
+// Membuat kelas bernama Animal
+class Animal {
+  // Mendeklarasikan properti name dan age
+  name: string;
+  age: number;
 
-// Mengubah elemen array dengan indeks
-fruits[0] = "pear"; // ["pear", "banana", "orange", "mango"]
+  // Membuat konstruktor untuk menginisialisasi properti
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
 
-// Mengakses elemen array dengan indeks
-console.log(fruits[1]); // banana
+  // Membuat metode untuk menampilkan informasi objek
+  showInfo() {
+    console.log(`This is ${this.name}, ${this.age} years old`);
+  }
+}
 
-// Mengubah elemen tuple dengan indeks atau label
-person[0] = "Bob"; // ["Bob", 20]
-person.name = "Charlie"; // ["Charlie", 20]
+// Membuat objek dari kelas Animal
+let animal = new Animal("Lion", 5);
 
-// Mengakses elemen tuple dengan indeks atau label
-console.log(person[1]); // 20
-console.log(person.age); // 20
+// Memanggil metode showInfo
+animal.showInfo(); // This is Lion, 5 years old
+```
+
+- **Interface**. Interface adalah tipe abstrak yang mendefinisikan struktur atau kontrak untuk objek. Interface dapat memiliki properti dan metode yang harus diimplementasikan oleh objek yang mengikuti interface tersebut. Interface dapat dibuat dengan kata kunci **interface**³. Contoh:
+
+```ts
+// Membuat interface bernama Person
+interface Person {
+  // Mendefinisikan properti name dan age
+  name: string;
+  age: number;
+
+  // Mendefinisikan metode greet
+  greet(): void;
+}
+
+// Membuat objek yang mengimplementasikan interface Person
+let person: Person = {
+  name: "Alice",
+  age: 20,
+  greet() {
+    console.log("Hello, I am " + this.name);
+  }
+};
+
+// Memanggil metode greet
+person.greet(); // Hello, I am Alice
+```
+
+- **Type alias**. Type alias adalah cara untuk memberi nama atau alias untuk tipe objek yang sudah ada atau tipe lainnya. Type alias dapat dibuat dengan kata kunci **type**⁴. Contoh:
+
+```ts
+// Membuat type alias bernama Student
+type Student = {
+  // Mendefinisikan properti name, age, dan score
+  name: string;
+  age: number;
+  score: number;
+};
+
+// Membuat objek dengan tipe Student
+let student: Student = {
+  name: "Bob",
+  age: 18,
+  score: 90
+};
 ```
