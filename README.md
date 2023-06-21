@@ -4,38 +4,173 @@
 
 </div>
 
-## Array dan Tuples
+## OPERASI IF
 
-TypeScript Array dan tuples adalah dua tipe data yang dapat digunakan untuk menyimpan kumpulan nilai. Namun, ada beberapa perbedaan antara array dan tuple dalam TypeScript. Berikut ini adalah beberapa perbedaan tersebut:
+TypeScript if adalah pernyataan yang digunakan untuk mengeksekusi suatu blok kode berdasarkan kondisi tertentu. Jika kondisi bernilai true, maka blok kode di dalam if akan dieksekusi. Jika kondisi bernilai false, maka blok kode di dalam if akan dilewati.
 
-- Tipe elemen: Dalam array, tipe elemen-elemen harus sama, sedangkan dalam tuple, setiap elemen dapat memiliki tipe yang berbeda¹.
-- Panjang: Array dapat memiliki panjang yang berubah, sedangkan tuple memiliki panjang tetap¹.
-- Metode: Array memiliki metode bawaan seperti push, pop, slice, dan lain-lain, sedangkan tuple tidak memiliki metode bawaan².
-- Akses elemen: Array dan tuple sama-sama dapat mengakses elemen dengan indeks numerik, tetapi tuple juga dapat mengakses elemen dengan label³.
-
-Berikut adalah contoh penggunaan TypeScript Array dan tuples:
+Contoh TypeScript if adalah sebagai berikut:
 
 ```ts
-// Membuat array dari tipe string
-let fruits: string[] = ["apple", "banana", "orange"];
+// Mendeklarasikan variabel dengan tipe data number
+let x: number = 10;
+let y: number = 20;
 
-// Membuat tuple dari tipe string dan number
-let person: [name: string, age: number] = ["Alice", 20];
+// Menggunakan if untuk memeriksa kondisi
+if (x > y) {
+  // Blok kode ini akan dieksekusi jika x lebih besar dari y
+  console.log("x is greater than y");
+}
 
-// Menambahkan elemen ke array dengan metode push
-fruits.push("mango"); // ["apple", "banana", "orange", "mango"]
+if (x < y) {
+  // Blok kode ini akan dieksekusi jika x lebih kecil dari y
+  console.log("x is less than y");
+}
+```
 
-// Mengubah elemen array dengan indeks
-fruits[0] = "pear"; // ["pear", "banana", "orange", "mango"]
+TypeScript juga mendukung if...else dan if...else if...else untuk mengeksekusi blok kode alternatif jika kondisi di dalam if tidak terpenuhi.
 
-// Mengakses elemen array dengan indeks
-console.log(fruits[1]); // banana
+Contoh TypeScript if...else dan if...else if...else adalah sebagai berikut:
 
-// Mengubah elemen tuple dengan indeks atau label
-person[0] = "Bob"; // ["Bob", 20]
-person.name = "Charlie"; // ["Charlie", 20]
+```ts
+// Mendeklarasikan variabel dengan tipe data number
+let x: number = 10;
+let y: number = 20;
 
-// Mengakses elemen tuple dengan indeks atau label
-console.log(person[1]); // 20
-console.log(person.age); // 20
+// Menggunakan if...else untuk memeriksa kondisi
+if (x > y) {
+  // Blok kode ini akan dieksekusi jika x lebih besar dari y
+  console.log("x is greater than y");
+} else {
+  // Blok kode ini akan dieksekusi jika x tidak lebih besar dari y
+  console.log("x is less than or equal to y");
+}
+
+// Menggunakan if...else if...else untuk memeriksa kondisi
+if (x > y) {
+  // Blok kode ini akan dieksekusi jika x lebih besar dari y
+  console.log("x is greater than y");
+} else if (x < y) {
+  // Blok kode ini akan dieksekusi jika x lebih kecil dari y
+  console.log("x is less than y");
+} else {
+  // Blok kode ini akan dieksekusi jika x sama dengan y
+  console.log("x is equal to y");
+}
+```
+
+TypeScript juga mendukung operator ternary ?: untuk mengeksekusi salah satu dari dua ekspresi berdasarkan kondisi tertentu.
+
+Contoh TypeScript operator ternary ?: adalah sebagai berikut:
+
+```ts
+// Mendeklarasikan variabel dengan tipe data number
+let x: number = 10;
+let y: number = 20;
+
+// Menggunakan operator ternary ?: untuk memeriksa kondisi
+x > y
+  ? console.log("x is greater than y")
+  : console.log("x is less than or equal to y");
+```
+
+## OPERASI SWITCH
+
+TypeScript switch adalah pernyataan yang digunakan untuk mengeksekusi salah satu dari beberapa blok kode berdasarkan nilai atau ekspresi tertentu. Switch memungkinkan kita untuk menulis kode yang lebih rapi dan mudah dibaca daripada menggunakan if...else if...else yang berulang-ulang.
+
+Sintax Dasar:
+
+```ts
+switch (expression) {
+  case constant - expression1: {
+    //statements;
+    break;
+  }
+  case constant_expression2: {
+    //statements;
+    break;
+  }
+  default: {
+    //statements;
+    break;
+  }
+}
+```
+
+Contoh TypeScript switch adalah sebagai berikut:
+
+```ts
+// Mendeklarasikan variabel dengan tipe data string
+let day: string = "Monday";
+
+// Menggunakan switch untuk memeriksa nilai variabel
+switch (day) {
+  case "Monday":
+    // Blok kode ini akan dieksekusi jika day bernilai "Monday"
+    console.log("Today is Monday");
+    break;
+  case "Tuesday":
+    // Blok kode ini akan dieksekusi jika day bernilai "Tuesday"
+    console.log("Today is Tuesday");
+    break;
+  case "Wednesday":
+    // Blok kode ini akan dieksekusi jika day bernilai "Wednesday"
+    console.log("Today is Wednesday");
+    break;
+  case "Thursday":
+    // Blok kode ini akan dieksekusi jika day bernilai "Thursday"
+    console.log("Today is Thursday");
+    break;
+  case "Friday":
+    // Blok kode ini akan dieksekusi jika day bernilai "Friday"
+    console.log("Today is Friday");
+    break;
+  case "Saturday":
+    // Blok kode ini akan dieksekusi jika day bernilai "Saturday"
+    console.log("Today is Saturday");
+    break;
+  case "Sunday":
+    // Blok kode ini akan dieksekusi jika day bernilai "Sunday"
+    console.log("Today is Sunday");
+    break;
+  default:
+    // Blok kode ini akan dieksekusi jika day tidak bernilai salah satu dari case di atas
+    console.log("Invalid day");
+}
+```
+
+TypeScript juga mendukung pengelompokan beberapa case yang memiliki blok kode yang sama. Hal ini berguna untuk menghindari duplikasi kode.
+
+Contoh TypeScript pengelompokan case adalah sebagai berikut:
+
+```ts
+// Mendeklarasikan variabel dengan tipe data number
+let month: number = 2;
+
+// Menggunakan switch untuk memeriksa nilai variabel
+switch (month) {
+  case 1:
+  case 3:
+  case 5:
+  case 7:
+  case 8:
+  case 10:
+  case 12:
+    // Blok kode ini akan dieksekusi jika month bernilai salah satu dari case di atas
+    console.log("This month has 31 days");
+    break;
+  case 4:
+  case 6:
+  case 9:
+  case 11:
+    // Blok kode ini akan dieksekusi jika month bernilai salah satu dari case di atas
+    console.log("This month has 30 days");
+    break;
+  case 2:
+    // Blok kode ini akan dieksekusi jika month bernilai 2
+    console.log("This month has either 28 or 29 days");
+    break;
+  default:
+    // Blok kode ini akan dieksekusi jika month tidak bernilai salah satu dari case di atas
+    console.log("Invalid month");
+}
 ```
