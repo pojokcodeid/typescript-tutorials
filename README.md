@@ -4,38 +4,55 @@
 
 </div>
 
-## Array dan Tuples
+## Union
 
-TypeScript Array dan tuples adalah dua tipe data yang dapat digunakan untuk menyimpan kumpulan nilai. Namun, ada beberapa perbedaan antara array dan tuple dalam TypeScript. Berikut ini adalah beberapa perbedaan tersebut:
 
-- Tipe elemen: Dalam array, tipe elemen-elemen harus sama, sedangkan dalam tuple, setiap elemen dapat memiliki tipe yang berbeda¹.
-- Panjang: Array dapat memiliki panjang yang berubah, sedangkan tuple memiliki panjang tetap¹.
-- Metode: Array memiliki metode bawaan seperti push, pop, slice, dan lain-lain, sedangkan tuple tidak memiliki metode bawaan².
-- Akses elemen: Array dan tuple sama-sama dapat mengakses elemen dengan indeks numerik, tetapi tuple juga dapat mengakses elemen dengan label³.
+TypeScript Union adalah tipe data yang menggabungkan dua atau lebih tipe data lainnya. Union dapat digunakan untuk mendeklarasikan variabel, parameter, atau nilai kembalian yang dapat memiliki beberapa tipe data yang berbeda. Union dapat membantu kita menangani situasi ketika nilai dapat bervariasi dalam tipe data yang mereka ambil¹. Kita menggunakan simbol pipa (|) untuk memisahkan setiap tipe data dalam union, misalnya number | string | boolean adalah tipe data dari nilai yang dapat berupa number, string, atau boolean.
 
-Berikut adalah contoh penggunaan TypeScript Array dan tuples:
+Berikut adalah contoh penggunaan TypeScript Union:
 
 ```ts
-// Membuat array dari tipe string
-let fruits: string[] = ["apple", "banana", "orange"];
+// Mendeklarasikan fungsi yang menerima parameter padding yang dapat berupa number atau string
+function padLeft(value: string, padding: number | string) {
+  // ...
+}
 
-// Membuat tuple dari tipe string dan number
-let person: [name: string, age: number] = ["Alice", 20];
-
-// Menambahkan elemen ke array dengan metode push
-fruits.push("mango"); // ["apple", "banana", "orange", "mango"]
-
-// Mengubah elemen array dengan indeks
-fruits[0] = "pear"; // ["pear", "banana", "orange", "mango"]
-
-// Mengakses elemen array dengan indeks
-console.log(fruits[1]); // banana
-
-// Mengubah elemen tuple dengan indeks atau label
-person[0] = "Bob"; // ["Bob", 20]
-person.name = "Charlie"; // ["Charlie", 20]
-
-// Mengakses elemen tuple dengan indeks atau label
-console.log(person[1]); // 20
-console.log(person.age); // 20
+// Memanggil fungsi padLeft dengan parameter padding yang berbeda
+padLeft("Hello world", 4); // padding berupa number
+padLeft("Hello world", " "); // padding berupa string
+padLeft("Hello world", true); // padding berupa boolean (salah)
+Argument of type 'boolean' is not assignable to parameter of type 'number | string'.
 ```
+
+Dalam contoh di atas, kita mendefinisikan fungsi padLeft yang menerima parameter padding yang dapat berupa number atau string. Kita dapat memanggil fungsi tersebut dengan nilai padding yang sesuai dengan union type, tetapi jika kita mencoba memanggilnya dengan nilai padding yang tidak termasuk dalam union type, seperti boolean, kita akan mendapatkan kesalahan.
+
+Untuk mengakses properti atau metode dari union type, kita hanya dapat mengakses anggota yang umum untuk semua tipe data dalam union². Contoh:
+
+```ts
+// Mendeklarasikan interface Fish dan Bird
+interface Fish {
+  swim(): void;
+  layEggs(): void;
+}
+
+interface Bird {
+  fly(): void;
+  layEggs(): void;
+}
+
+// Mendeklarasikan fungsi yang mengembalikan nilai union type Fish | Bird
+function getSmallPet(): Fish | Bird {
+  // ...
+}
+
+// Mengakses properti atau metode dari union type
+let pet = getSmallPet();
+pet.layEggs(); // OK, karena layEggs() umum untuk Fish dan Bird
+pet.swim(); // Error, karena swim() hanya ada di Fish
+Property 'swim' does not exist on type 'Fish | Bird'.
+Property 'swim' does not exist on type 'Bird'.
+```
+
+Dalam contoh di atas, kita mendefinisikan interface Fish dan Bird, dan fungsi getSmallPet() yang mengembalikan nilai union type Fish | Bird. Kita dapat mengakses metode layEggs() dari nilai union type, karena metode tersebut umum untuk Fish dan Bird. Namun, kita tidak dapat mengakses metode swim() dari nilai union type, karena metode tersebut hanya ada di Fish.
+
+
