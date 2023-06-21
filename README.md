@@ -6,7 +6,7 @@
 - contoh
 
 ```
-git clone -b part-07-typedata-special https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\06-typedata-special
+git clone -b part-06-typedata-special https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\05-typedata-special
 ```
 
 # Tipe Data Special
