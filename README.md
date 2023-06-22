@@ -5,6 +5,15 @@
 
 </div>
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-07-objek-oriented https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\06-objek-oriented
+```
+
 Objek oriented di TypeScript adalah paradigma pemrograman yang berdasarkan pada konsep objek, yaitu entitas yang memiliki properti (atribut) dan perilaku (metode). Objek oriented di TypeScript memungkinkan kita untuk menyusun program yang terdiri dari komponen-komponen yang dapat digunakan kembali (reusable) dan mudah dimodifikasi¹.
 
 Beberapa fitur objek oriented di TypeScript adalah:
