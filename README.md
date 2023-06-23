@@ -4,6 +4,15 @@
 
 </div>
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-08-array-tuples https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\07-array-tuples
+```
+
 ## Array dan Tuples
 
 TypeScript Array dan tuples adalah dua tipe data yang dapat digunakan untuk menyimpan kumpulan nilai. Namun, ada beberapa perbedaan antara array dan tuple dalam TypeScript. Berikut ini adalah beberapa perbedaan tersebut:
