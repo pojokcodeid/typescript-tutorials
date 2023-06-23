@@ -1,14 +1,22 @@
 <div align="center">
   
 # TYPESCRIPT
+## FUNCTION
 
 </div>
 
-## FUNCTION
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-08-function https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\07-function
+```
 
 Functions di TypeScript adalah blok kode yang dapat dipanggil berulang kali dengan memberikan input dan menghasilkan output. Functions di TypeScript dapat didefinisikan dengan sintaks yang sama dengan JavaScript, yaitu menggunakan kata kunci function, atau dengan menggunakan arrow function.
 
-Perintah dasarnya:
+Perintah dsdar fungsi
 
 ```ts
 function name(parameter: type, parameter:type,...): returnType {
@@ -16,168 +24,80 @@ function name(parameter: type, parameter:type,...): returnType {
 }
 ```
 
-Contoh Functions di TypeScript adalah sebagai berikut:
+contoh Functaion tanpa parameter
 
 ```ts
-// Mendefinisikan fungsi dengan kata kunci function
-function add(a: number, b: number): number {
-  return a + b;
+function display() {
+  console.log("Hello TypeScript!");
 }
 
-// Mendefinisikan fungsi dengan arrow function
-const multiply = (a: number, b: number): number => {
-  return a * b;
+display(); //Output: Hello TypeScript
+```
+
+Contoh Fungsi dengan parameter
+
+```ts
+function Sum(x: number, y: number): number {
+  return x + y;
+}
+
+console.log(Sum(2, 3)); // returns 5
+```
+
+### Fungsi Anonim
+
+Fungsi anonim adalah salah satu yang didefinisikan sebagai ekspresi. Ekspresi ini disimpan dalam sebuah variabel. Jadi, fungsinya sendiri tidak memiliki nama. Fungsi-fungsi ini dipanggil menggunakan nama variabel tempat fungsi disimpan.
+contoh:
+
+```ts
+let greeting = function () {
+  console.log("Hello TypeScript!");
 };
 
-// Memanggil fungsi
-console.log(add(2, 3)); // 5
-console.log(multiply(2, 3)); // 6
+greeting(); //Output: Hello TypeScript!
 ```
 
-Functions di TypeScript juga dapat memiliki tipe data yang eksplisit untuk parameter dan nilai kembalian. Tipe data parameter ditulis setelah nama parameter, sedangkan tipe data nilai kembalian ditulis setelah tanda kurung.
-
-Contoh Functions dengan tipe data eksplisit adalah sebagai berikut:
+Fungsi anomim dengan parameter :
 
 ```ts
-// Mendefinisikan fungsi dengan tipe data eksplisit untuk parameter dan nilai kembalian
-function greet(name: string): string {
-  return "Hello, " + name;
-}
-
-// Memanggil fungsi
-console.log(greet("Budi")); // Hello, Budi
-```
-
-Functions di TypeScript juga dapat memiliki parameter opsional, parameter default, parameter rest, dan lain-lain.
-
-## FUNCTION TYPES
-
-Function Types di TypeScript adalah tipe data yang digunakan untuk mendeskripsikan tipe dari fungsi, yaitu parameter dan nilai kembalian. Function Types dapat ditulis dengan menggunakan function type expression, call signature, construct signature, atau type alias.
-
-Contoh Function Types dengan function type expression adalah sebagai berikut:
-
-```ts
-// Mendeklarasikan variabel dengan function type expression
-let add: (a: number, b: number) => number;
-
-// Menginisialisasi variabel dengan fungsi yang sesuai dengan tipe data
-add = function (a: number, b: number) {
-  return a + b;
+let Sum = function (x: number, y: number): number {
+  return x + y;
 };
 
-// Memanggil fungsi
-console.log(add(2, 3)); // 5
+console.log(Sum(2, 3)); // returns 5
 ```
 
-Contoh Function Types dengan call signature adalah sebagai berikut:
+### Parameter Fungsi
+
+Parameter adalah nilai atau argumen yang diteruskan ke suatu fungsi. Di TypeScript, kompiler mengharapkan suatu fungsi untuk menerima jumlah dan jenis argumen yang tepat seperti yang didefinisikan dalam tanda tangan fungsi. Jika fungsi mengharapkan tiga parameter, kompiler memeriksa apakah pengguna telah memberikan nilai untuk ketiga parameter yaitu memeriksa kecocokan yang tepat.
 
 ```ts
-// Mendeklarasikan interface dengan call signature
-interface GreetFunction {
-  (name: string): string;
+function Greet(greeting: string, name: string): string {
+  return greeting + " " + name + "!";
 }
 
-// Mendeklarasikan variabel dengan tipe data interface
-let greet: GreetFunction;
-
-// Menginisialisasi variabel dengan fungsi yang sesuai dengan tipe data
-greet = function (name: string) {
-  return "Hello, " + name;
-};
-
-// Memanggil fungsi
-console.log(greet("Budi")); // Hello, Budi
+Greet("Hello", "Steve"); //OK, returns "Hello Steve!"
+Greet("Hi"); // Compiler Error: Expected 2 arguments, but got 1.
+Greet("Hi", "Bill", "Gates"); //Compiler Error: Expected 2 arguments, but got 3.
 ```
 
-Contoh Function Types dengan construct signature adalah sebagai berikut:
+### Parameter Opsional
+
+TypeScript memiliki fungsionalitas parameter opsional. Parameter yang mungkin atau mungkin tidak menerima nilai dapat ditambahkan dengan tanda '?' untuk menandainya sebagai opsional.
 
 ```ts
-// Mendeklarasikan interface dengan construct signature
-interface PersonConstructor {
-  new (name: string): Person;
+function Greet(greeting: string, name?: string): string {
+  return greeting + " " + name + "!";
 }
 
-// Mendeklarasikan kelas yang sesuai dengan construct signature
-class Person {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-}
-
-// Mendeklarasikan variabel dengan tipe data interface
-let personFactory: PersonConstructor;
-
-// Menginisialisasi variabel dengan kelas yang sesuai dengan tipe data
-personFactory = Person;
-
-// Membuat objek baru dengan menggunakan variabel
-let person = new personFactory("Budi");
-
-// Menampilkan properti objek
-console.log(person.name); // Budi
+Greet("Hello", "Steve"); //OK, returns "Hello Steve!"
+Greet("Hi"); // OK, returns "Hi undefined!".
+Greet("Hi", "Bill", "Gates"); //Compiler Error: Expected 2 arguments, but got 3.
 ```
 
-Contoh Function Types dengan type alias adalah sebagai berikut:
+### Default Parameter
 
-```ts
-// Mendeklarasikan type alias untuk function type expression
-type AddFunction = (a: number, b: number) => number;
-
-// Mendeklarasikan variabel dengan tipe data type alias
-let add: AddFunction;
-
-// Menginisialisasi variabel dengan fungsi yang sesuai dengan tipe data
-add = function (a: number, b: number) {
-  return a + b;
-};
-
-// Memanggil fungsi
-console.log(add(2, 3)); // 5
-```
-
-## OPTIONAL PARAMETER
-
-Optional Parameters di TypeScript adalah parameter yang dapat diabaikan saat memanggil fungsi. Optional Parameters ditandai dengan tanda tanya (?) setelah nama parameter. TypeScript tidak akan memeriksa jumlah dan tipe argumen untuk parameter opsional, tetapi hanya untuk parameter yang wajib. Parameter opsional yang tidak diberikan nilai akan mendapatkan nilai undefined.
-
-Contoh Optional Parameters di TypeScript adalah sebagai berikut:
-
-```ts
-// Mendefinisikan fungsi dengan parameter opsional c
-function add(a: number, b: number, c?: number): number {
-  if (typeof c !== "undefined") {
-    // Jika c diberikan nilai, maka tambahkan ke hasil
-    return a + b + c;
-  } else {
-    // Jika c tidak diberikan nilai, maka kembalikan a + b saja
-    return a + b;
-  }
-}
-
-// Memanggil fungsi dengan dua argumen
-console.log(add(2, 3)); // 5
-
-// Memanggil fungsi dengan tiga argumen
-console.log(add(2, 3, 4)); // 9
-```
-
-Optional Parameters harus diletakkan setelah parameter wajib dalam daftar parameter. Jika tidak, TypeScript akan mengeluarkan error.
-
-Contoh error saat meletakkan parameter opsional sebelum parameter wajib adalah sebagai berikut:
-
-```ts
-// Mendefinisikan fungsi dengan parameter opsional a dan parameter wajib b
-function multiply(a?: number, b: number): number {
-  // Error: A required parameter cannot follow an optional parameter.
-  return a * b;
-}
-```
-
-## DEFAULT PARAMETER
-
-Default Parameters di TypeScript adalah parameter yang memiliki nilai awal yang ditentukan jika parameter tersebut tidak diberikan nilai atau bernilai undefined saat memanggil fungsi. Default Parameters dapat ditulis dengan menggunakan tanda sama dengan (=) diikuti dengan nilai default setelah tipe data parameter. TypeScript juga dapat menentukan tipe data parameter default dari nilai default tersebut. Default Parameters dapat membantu kita menghindari memberikan nilai parameter yang berulang-ulang atau tidak perlu saat memanggil fungsi.
-
-Contoh Default Parameters di TypeScript adalah sebagai berikut:
+Default Parameters di TypeScript adalah parameter yang memiliki nilai awal yang ditentukan jika parameter tersebut tidak diberikan nilai atau bernilai undefined saat memanggil fungsi. Default Parameters dapat ditulis dengan menggunakan tanda sama dengan (=) diikuti dengan nilai default setelah tipe data parameter.
 
 ```ts
 // Mendefinisikan fungsi dengan parameter default discount
@@ -192,9 +112,7 @@ console.log(applyDiscount(100)); // 95
 console.log(applyDiscount(100, 0.1)); // 90
 ```
 
-Default Parameters juga merupakan parameter opsional, artinya kita dapat mengabaikan parameter default saat memanggil fungsi. Namun, berbeda dengan parameter opsional, default parameters tidak perlu diletakkan setelah parameter wajib dalam daftar parameter. Jika default parameters diletakkan sebelum parameter wajib, kita perlu secara eksplisit memberikan nilai undefined untuk mendapatkan nilai default yang ditentukan.
-
-Contoh Default Parameters sebelum parameter wajib adalah sebagai berikut:
+contoh lainnya :
 
 ```ts
 // Mendefinisikan fungsi dengan parameter default year dan parameter wajib month
@@ -241,7 +159,7 @@ console.log(getDay(undefined, 2)); // bergantung pada tahun saat ini
 console.log(getDay()); // Error: Expected at least one argument, but got zero.
 ```
 
-## REST PARAMETER
+### REST PARAMETER
 
 Rest Parameters di TypeScript adalah parameter yang memungkinkan kita untuk menerima nol atau lebih argumen dengan tipe data tertentu sebagai sebuah array. Rest Parameters berguna ketika jumlah parameter tidak diketahui atau dapat bervariasi. Rest Parameters dikelompokkan ke dalam sebuah variabel tunggal yang dapat diakses sebagai sebuah array di dalam fungsi. Sebuah fungsi hanya dapat memiliki satu rest parameter, dan rest parameter harus muncul terakhir dalam daftar parameter.
 
@@ -268,25 +186,7 @@ console.log(sum(1, 2, 3)); // 6
 console.log(sum(1, 2, 3, 4, 5)); // 15
 ```
 
-Rest Parameters di TypeScript dapat digunakan dalam fungsi, arrow function, atau kelas.
-
-Contoh Rest Parameters dalam arrow function adalah sebagai berikut:
-
-```ts
-// Mendefinisikan arrow function dengan rest parameter names
-let greet = (...names: string[]) => {
-  // Mengembalikan sapaan untuk semua nama dalam array
-  return "Hello, " + names.join(", ") + "!";
-};
-
-// Memanggil arrow function dengan satu argumen
-console.log(greet("Budi")); // Hello, Budi!
-
-// Memanggil arrow function dengan dua argumen
-console.log(greet("Budi", "Ani")); // Hello, Budi, Ani!
-```
-
-## FUNCTION OVERLOADING
+### FUNCTION OVERLOADING
 
 Function Overloadings di TypeScript adalah cara untuk mendefinisikan beberapa fungsi dengan nama yang sama tetapi dengan tanda tangan (signature) yang berbeda, yaitu parameter dan tipe data kembalian. Function Overloadings berguna ketika kita ingin menulis fungsi yang dapat dipanggil dengan berbagai cara dengan parameter yang berbeda-beda atau tipe data kembalian yang berbeda-beda. Fungsi yang tepat untuk dipanggil akan ditentukan pada saat runtime berdasarkan argumen yang diberikan.
 
@@ -324,11 +224,13 @@ class Calculator {
 
   // Mendefinisikan implementasi metode calculate
   calculate(a: number, b: number, op: "+" | "-"): number {
+    let hasil = 0;
     if (op === "+") {
-      return a + b;
+      hasil = a + b;
     } else if (op === "-") {
-      return a - b;
+      hasil = a - b;
     }
+    return hasil;
   }
 }
 
@@ -340,4 +242,23 @@ console.log(calc.calculate(2, 3, "+")); // 5
 
 // Memanggil metode calculate dengan argumen -
 console.log(calc.calculate(2, 3, "-")); // -1
+```
+
+## Arrow Function
+
+Arrow function di TypeScript adalah sebuah fungsi anonim yang memiliki sintaks yang lebih singkat daripada fungsi biasa. Arrow function menggunakan tanda panah tebal => untuk memisahkan parameter dan tubuh fungsi. Arrow function juga memiliki lingkup leksikal untuk kata kunci this, yang berarti mereka mewarisi nilai this dari fungsi atau kelas yang mengandungnya
+
+```ts
+// Fungsi biasa
+function tambah(x: number, y: number): number {
+  return x + y;
+}
+
+// Arrow function
+let tambah = (x: number, y: number): number => {
+  return x + y;
+};
+
+// Arrow function dengan satu pernyataan
+let tambah = (x: number, y: number) => x + y;
 ```
