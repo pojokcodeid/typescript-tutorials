@@ -4,6 +4,16 @@
 
 </div>
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-09-Interfaces https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\08-interface
+```
+
+
 ## Interfaces
 
 Interfaces di TypeScript adalah tipe abstrak yang mendeskripsikan bentuk dari sebuah objek, yaitu nama properti dan tipe data yang dapat dimilikinya. Interface berfungsi sebagai kontrak untuk kelas, fungsi, atau objek yang mengimplementasikannya, artinya mereka harus mengikuti sintaks yang ditentukan oleh interface. Interface tidak menghasilkan kode apa pun atau memiliki biaya runtime, tetapi mereka membantu dengan pengecekan tipe dan pencegahan kesalahan. TypeScript menggunakan kata kunci interface untuk mendefinisikan interface
