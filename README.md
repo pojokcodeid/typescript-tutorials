@@ -11,7 +11,7 @@
 - contoh
 
 ```
-git clone -b part-10-namespace https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\09-namespace
+git clone -b part-11-class https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\10-class
 ```
 referensi : <br>
 https://www.typescriptlang.org/docs/handbook/namespaces.html
