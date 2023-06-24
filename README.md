@@ -13,6 +13,8 @@
 ```
 git clone -b part-10-namespace https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\09-namespace
 ```
+referensi : <br>
+https://www.typescriptlang.org/docs/handbook/namespaces.html
 
 Namespaces adalah cara khusus TypeScript untuk mengorganisir kode. Namespaces adalah objek JavaScript yang diberi nama di dalam namespace global. Hal ini membuat namespaces sangat sederhana untuk digunakan. Tidak seperti modul, mereka dapat mencakup beberapa file, dan dapat digabungkan menggunakan --outFile1.
 
