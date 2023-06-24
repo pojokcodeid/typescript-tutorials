@@ -151,7 +151,7 @@ p1.x = 5; // error, cannot assign to readonly property
 ```
 Interface ini menentukan bahwa objek dengan tipe Point harus memiliki properti x dan y dengan tipe data number yang tidak dapat diubah setelah objek dibuat. Jika mencoba mengubah nilai properti tersebut, akan terjadi kesalahan kompilasi.
 
-## Read only Properties
+## Extending Interfaces
 Interface yang memperluas interface lain di TypeScript berarti bahwa interface dapat mewarisi properti dan metode dari interface lain dan menambahkan atau menimpa properti dan metode sendiri. Ini adalah cara untuk menerapkan pewarisan, sebuah mekanisme di mana interface anak dapat mengakses properti dan metode dari interface induk. Memperluas interface membantu kita untuk membuat interface yang lebih generik dan fleksibel dan menggunakan kembali interface yang ada. Sebuah interface dapat memperluas satu atau lebih interface lain menggunakan kata kunci extends, misalnya:
 
 ```ts
