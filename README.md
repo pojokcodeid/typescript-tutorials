@@ -56,6 +56,8 @@ tsc --outFile ./build/js/main.js ./src/main.ts -W
 ```
 
 ## menggunakan Module
+referensi <br>
+https://www.typescriptlang.org/docs/handbook/modules.html
 
 buat file data.ts
 
@@ -81,4 +83,6 @@ jalankan build dengan perintah
 tsc -W
 -- atau
 tsc
+-- ata
+tsc --module commonjs -W
 ```
