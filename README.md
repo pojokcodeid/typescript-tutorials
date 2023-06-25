@@ -18,11 +18,13 @@ git clone -b part-13-access-modifier https://github.com/pojokcodeid/typescript-t
 ```
 
 referensi : <br>
-https://www.typescriptlang.org/docs/handbook/2/classes.html
+https://www.typescriptlang.org/docs/handbook/classes.html
 
-ACCESS MODIFIER di TypeScript adalah kata kunci yang digunakan untuk mengatur tingkat akses atau visibilitas dari properti atau metode dalam sebuah kelas. ACCESS MODIFIER dapat membantu kita untuk menyembunyikan detail implementasi dari pengguna dan mengontrol bagaimana properti atau metode dapat diakses dan dimodifikasi¹. TypeScript menyediakan tiga jenis ACCESS MODIFIER, yaitu:
+ACCESS MODIFIER di TypeScript adalah kata kunci yang digunakan untuk mengatur tingkat akses atau visibilitas dari properti atau metode dalam sebuah kelas. ACCESS MODIFIER dapat membantu kita untuk menyembunyikan detail implementasi dari pengguna dan mengontrol bagaimana properti atau metode dapat diakses dan dimodifikasi. TypeScript menyediakan tiga jenis ACCESS MODIFIER, yaitu:
 
-- **private**. ACCESS MODIFIER ini membatasi akses hanya untuk kelas yang sama. Jika kita menambahkan ACCESS MODIFIER ini ke properti atau metode, kita hanya dapat mengakses atau memodifikasi properti atau metode tersebut dalam kelas yang sama. Setiap upaya untuk mengakses atau memodifikasi properti atau metode private di luar kelas akan menghasilkan kesalahan saat kompilasi². Contoh:
+- **private**. ACCESS MODIFIER ini membatasi akses hanya untuk kelas yang sama. Jika kita menambahkan ACCESS MODIFIER ini ke properti atau metode, kita hanya dapat mengakses atau memodifikasi properti atau metode tersebut dalam kelas yang sama. Setiap upaya untuk mengakses atau memodifikasi properti atau metode private di luar kelas akan menghasilkan kesalahan saat kompilasi.
+
+Contoh:
 
 ```ts
 // Membuat kelas bernama Account
@@ -170,4 +172,26 @@ console.log(animal.age); // 5
 
 // Memanggil metode showInfo dengan modifier public
 animal.showInfo(); // This is Lion, 5 years old
+```
+
+- Jika acess modifier tidak didefinisikan maka akan bertindak seperti default yaitu PUBLIC
+  contoh :
+
+```ts
+class Manusia {
+  nama: string;
+  constructor(nama: string) {
+    this.nama = nama;
+  }
+
+  setNama(nama: string) {
+    this.nama = nama;
+  }
+}
+
+let mhs = new Manusia("Muhammad");
+mhs.nama = "Muhammad";
+console.log(mhs.nama);
+mhs.setNama("Pojok Code");
+console.log(mhs.nama);
 ```
