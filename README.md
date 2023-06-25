@@ -15,7 +15,6 @@
 git clone -b part-14-readonly-property https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\13-readonly
 ```
 
-
 TypeScript READONLY PROPERTY adalah properti yang tidak dapat diubah setelah diinisialisasi. Properti yang ditandai dengan READONLY PROPERTY hanya dapat ditetapkan nilai saat deklarasi atau dari dalam konstruktor kelas yang sama. Semua penugasan lain tidak diperbolehkan¹. Untuk menambahkan READONLY PROPERTY ke properti, kita menggunakan kata kunci **readonly**². Contoh:
 
 ```ts
@@ -51,6 +50,7 @@ circle.radius = 20; // Error: Cannot assign to 'radius' because it is a read-onl
 Dalam contoh di atas, kita mendefinisikan kelas Circle dengan properti radius yang memiliki modifier readonly. Kita dapat menginisialisasi nilai radius melalui konstruktor, dan mengaksesnya melalui objek circle. Namun, kita tidak dapat mengubah nilai radius setelah objek circle dibuat, karena properti tersebut bersifat readonly.
 
 Contoh Readonly Properties dalam interface dan type alias adalah sebagai berikut:
+
 ```ts
 // Mendefinisikan interface Person
 interface Person {
@@ -74,4 +74,32 @@ console.log(person.hobbies); // ["reading", "writing", "coding"]
 // Mencoba mengubah properti name dan hobbies yang bersifat readonly
 person.name = "Ani"; // Error: Cannot assign to 'name' because it is a read-only property.
 person.hobbies.push("gaming"); // Error: Property 'push' does not exist on type 'readonly string[]'.
+```
+
+Dengan cara yang sama Anda dapat menggunakan Readonly<T>untuk membuat tipe readonly
+contoh :
+
+```ts
+interface IEmployee {
+  empCode: number;
+  empName: string;
+}
+
+let emp1: Readonly<IEmployee> = {
+  empCode: 1,
+  empName: "Steve",
+};
+
+emp1.empCode = 100; // Compiler Error: Cannot change readonly 'empCode'
+emp1.empName = "Bill"; // Compiler Error: Cannot change readonly 'empName'
+
+console.log(emp1);
+
+let emp2: IEmployee = {
+  empCode: 1,
+  empName: "Steve",
+};
+
+emp2.empCode = 100; // OK
+emp2.empName = "Bill"; // OK
 ```
