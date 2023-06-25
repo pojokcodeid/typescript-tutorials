@@ -103,3 +103,31 @@ let emp2: IEmployee = {
 emp2.empCode = 100; // OK
 emp2.empName = "Bill"; // OK
 ```
+
+## Readonly Generik
+
+conoth :
+
+```ts
+// Membuat tipe generic dengan properti readonly
+type ReadonlyPoint<T> = {
+  readonly [K in keyof T]: T[K];
+};
+
+// Membuat tipe Point dengan properti x dan y
+type Point = {
+  x: number;
+  y: number;
+};
+
+// Membuat tipe ReadonlyPoint dengan menggunakan generic
+type ReadonlyPoint2D = ReadonlyPoint<Point>;
+
+// Membuat object dari tipe ReadonlyPoint2D
+let point: ReadonlyPoint2D = { x: 10, y: 20 };
+
+// Mencoba mengubah properti readonly
+point.x = 30; // Error: Cannot assign to 'x' because it is a read-only property
+
+console.log(point.x);
+```
