@@ -1,7 +1,7 @@
 <div align="center">
   
 # TYPESCRIPT
-## CLASS
+## ABSTRACT CLASS
 
 </div>
 
@@ -11,7 +11,7 @@
 - contoh
 
 ```
-git clone -b part-11-class https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\10-class
+git clone -b part-12-abstractclass https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\11-abstractclass
 ```
 
 referensi : <br>
