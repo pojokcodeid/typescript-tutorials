@@ -6,6 +6,15 @@
 
 ## Readonly Property
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-14-readonly-property https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\13-readonly
+```
+
 
 TypeScript READONLY PROPERTY adalah properti yang tidak dapat diubah setelah diinisialisasi. Properti yang ditandai dengan READONLY PROPERTY hanya dapat ditetapkan nilai saat deklarasi atau dari dalam konstruktor kelas yang sama. Semua penugasan lain tidak diperbolehkan¹. Untuk menambahkan READONLY PROPERTY ke properti, kita menggunakan kata kunci **readonly**². Contoh:
 
