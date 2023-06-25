@@ -15,82 +15,162 @@ git clone -b part-12-abstractclass https://github.com/pojokcodeid/typescript-tut
 ```
 
 referensi : <br>
-https://www.typescriptlang.org/docs/handbook/2/classes.html#handbook-content
+https://www.typescriptlang.org/docs/handbook/2/classes.html
 
-Class di TypeScript adalah sebuah fitur yang memungkinkan kita untuk membuat struktur data yang memiliki properti dan metode. Class juga dapat mewarisi sifat dari class lain dengan menggunakan kata kunci extends. Class di TypeScript mendukung fitur-fitur seperti constructor, field, method, access modifier, static member, abstract class, dan decorator
-
-Contoh class di TypeScript:
-
-```ts
-// Membuat class Employee dengan properti identifier dan method greet
-class Employee {
-  // Membuat field identifier dengan tipe string
-  identifier: string;
-
-  // Membuat constructor untuk menginisialisasi field identifier
-  constructor(identifier: string) {
-    this.identifier = identifier;
-  }
-
-  // Membuat method greet untuk menampilkan pesan sapaan
-  greet() {
-    console.log(`Hello, I am ${this.identifier}`);
-  }
-}
-
-// Membuat objek dari class Employee
-let emp1 = new Employee("Alice");
-let emp2 = new Employee("Bob");
-
-// Memanggil method greet dari objek emp1 dan emp2
-emp1.greet(); // Hello, I am Alice
-emp2.greet(); // Hello, I am Bob
-```
-
-## Cara Membuat Field
-
-Cara membuat field di class adalah dengan menulis nama field dan tipe datanya di dalam kurung kurawal yang mengapit definisi class. Field adalah variabel yang menyimpan data yang berkaitan dengan class. Field dapat memiliki hak akses seperti public, private, atau protected.
-
-## Konstruktor
-
-Konstruktor di TypeScript adalah sebuah metode khusus yang dipanggil saat kita membuat objek dari sebuah class. Konstruktor biasanya digunakan untuk menginisialisasi properti-properti dari class atau melakukan operasi-operasi awal1. Konstruktor dapat memiliki parameter dengan anotasi tipe, nilai default, dan overload
-
-## Membuat Objek
-
-Cara membuat objek dari class adalah dengan menggunakan kata kunci new yang diikuti dengan nama class dan tanda kurung. Objek adalah sebuah variabel yang menyimpan nilai dari sebuah class. Objek dapat mengakses properti dan metode yang ada di dalam class.
-
-```ts
-// Membuat objek dari class Employee
-let emp1 = new Employee("Alice");
-let emp2 = new Employee("Bob");
-
-// Memanggil method greet dari objek emp1 dan emp2
-emp1.greet(); // Hello, I am Alice
-emp2.greet(); // Hello, I am Bob
-```
-
-## Membuat Method
-
-Cara membuat method di class adalah dengan menulis nama method dan tipe kembalian (jika ada) di dalam kurung kurawal yang mengapit definisi class. Method adalah fungsi yang melakukan suatu tindakan atau operasi yang berkaitan dengan class. Method dapat memiliki parameter untuk menerima input dan return untuk mengembalikan output¹.
-
-Contoh membuat method di class:
+Abstract class di TypeScript adalah class yang menggunakan kata kunci **abstract** dan biasanya digunakan untuk mendefinisikan struktur dan perilaku dari sekelompok class yang berhubungan, sehingga mereka memiliki antarmuka yang konsisten dan dapat digunakan secara interchangeably. Abstract class tidak dapat dibuat menjadi object, tetapi hanya dapat diturunkan oleh class lain. Abstract class biasanya mencakup satu atau lebih method atau properti abstract yang harus didefinisikan oleh class turunan. Contoh penggunaan abstract class di TypeScript adalah sebagai berikut:
 
 ```typescript
-// Membuat class Employee dengan properti identifier dan method greet
-class Employee {
-  // Membuat field identifier dengan tipe string
-  identifier: string;
+abstract class Hewan {
+  // Ini adalah properti abstract
+  abstract nama: string;
 
-  // Membuat constructor untuk menginisialisasi field identifier
-  constructor(identifier: string) {
-    this.identifier = identifier;
-  }
+  // Ini adalah method abstract
+  abstract bersuara(): void;
 
-  // Membuat method greet untuk menampilkan pesan sapaan
-  greet() {
-    console.log(`Hello, I am ${this.identifier}`);
+  // Ini adalah method biasa
+  makan(): void {
+    console.log(`${this.nama} sedang makan`);
   }
 }
+
+class Kucing extends Hewan {
+  // Ini adalah implementasi properti abstract
+  nama: string = "Kitty";
+
+  // Ini adalah implementasi method abstract
+  bersuara(): void {
+    console.log("Meow");
+  }
+}
+
+// Membuat object dari class Kucing
+let kucing = new Kucing();
+
+// Memanggil method bersuara()
+kucing.bersuara(); // Output: Meow
+
+// Memanggil method makan()
+kucing.makan(); // Output: Kitty sedang makan
 ```
 
-Terkait dengan access modifier, static member, abstract class, dan decorator di bahas dalam materi terpisah.
+## Perbedaan Abstact Class dengan Interface
+
+Perbedaan antara abstract class dan interface di TypeScript adalah sebagai berikut:
+
+- Abstract class dapat berisi method dan properti yang memiliki implementasi, sementara interface hanya berisi method dan properti abstract yang harus didefinisikan oleh class yang mengimplementasikannya.
+- Abstract class dapat diwariskan oleh class lain menggunakan kata kunci **extends**, sementara interface tidak dapat diwariskan tetapi dapat diimplementasikan oleh class lain menggunakan kata kunci **implements**.
+- Abstract class dapat memiliki constructor, sementara interface tidak dapat memiliki constructor.
+- Abstract class dapat memiliki properti dan method dengan modifier seperti **public**, **private**, **protected**, atau **readonly**, sementara interface hanya dapat memiliki properti dan method dengan modifier **public** atau **readonly**.
+- Abstract class dapat memiliki tipe data dengan semua tipe data, sementara interface hanya dapat memiliki tipe data yang bersifat konstan.
+
+Contoh penggunaan abstract class dan interface di TypeScript adalah sebagai berikut:
+
+```typescript
+// Ini adalah abstract class
+abstract class Kendaraan {
+  // Ini adalah properti abstract
+  abstract roda: number;
+
+  // Ini adalah method abstract
+  abstract klakson(): void;
+
+  // Ini adalah method biasa
+  jalan(): void {
+    console.log(`Kendaraan ini berjalan dengan ${this.roda} roda`);
+  }
+}
+
+// Ini adalah interface
+interface BahanBakar {
+  // Ini adalah properti abstract
+  bensin: number;
+
+  // Ini adalah method abstract
+  isiBensin(liter: number): void;
+}
+
+// Ini adalah class yang mengimplementasikan interface dan mewarisi abstract class
+class Mobil extends Kendaraan implements BahanBakar {
+  // Ini adalah implementasi properti abstract
+  roda: number = 4;
+  bensin: number = 0;
+
+  // Ini adalah implementasi method abstract
+  klakson(): void {
+    console.log("Telolet");
+  }
+
+  isiBensin(liter: number): void {
+    this.bensin += liter;
+    console.log(`Bensin sekarang ${this.bensin} liter`);
+  }
+}
+
+// Membuat object dari class Mobil
+let mobil = new Mobil();
+
+// Memanggil method klakson()
+mobil.klakson(); // Output: Telolet
+
+// Memanggil method jalan()
+mobil.jalan(); // Output: Kendaraan ini berjalan dengan 4 roda
+
+// Memanggil method isiBensin()
+mobil.isiBensin(10); // Output: Bensin sekarang 10 liter
+```
+
+## Perbedaan dan kesamaan Class dengan Abstract Class
+
+Perbedaan antara abstract class dan class di TypeScript adalah sebagai berikut¹²:
+
+- Abstract class adalah class yang menggunakan kata kunci **abstract** dan tidak dapat dibuat menjadi object, sementara class biasa dapat dibuat menjadi object.
+- Abstract class dapat berisi method dan properti abstract yang harus didefinisikan oleh class turunan, sementara class biasa tidak dapat berisi method atau properti abstract.
+- Abstract class dapat berisi method dan properti yang memiliki implementasi, sementara class biasa juga dapat berisi method dan properti yang memiliki implementasi.
+- Abstract class dapat diwariskan oleh class lain menggunakan kata kunci **extends**, sementara class biasa juga dapat diwariskan oleh class lain menggunakan kata kunci **extends**.
+- Abstract class dapat memiliki constructor, sementara class biasa juga dapat memiliki constructor.
+
+Contoh penggunaan abstract class dan class di TypeScript adalah sebagai berikut:
+
+```typescript
+// Ini adalah abstract class
+abstract class Kendaraan {
+  // Ini adalah properti abstract
+  abstract roda: number;
+
+  // Ini adalah method abstract
+  abstract klakson(): void;
+
+  // Ini adalah method biasa
+  jalan(): void {
+    console.log(`Kendaraan ini berjalan dengan ${this.roda} roda`);
+  }
+}
+
+// Ini adalah class biasa
+class Mobil extends Kendaraan {
+  // Ini adalah implementasi properti abstract
+  roda: number = 4;
+
+  // Ini adalah implementasi method abstract
+  klakson(): void {
+    console.log("Telolet");
+  }
+
+  // Ini adalah method biasa
+  ngebut(): void {
+    console.log("Mobil ini ngebut dengan kecepatan tinggi");
+  }
+}
+
+// Membuat object dari class Mobil
+let mobil = new Mobil();
+
+// Memanggil method klakson()
+mobil.klakson(); // Output: Telolet
+
+// Memanggil method jalan()
+mobil.jalan(); // Output: Kendaraan ini berjalan dengan 4 roda
+
+// Memanggil method ngebut()
+mobil.ngebut(); // Output: Mobil ini ngebut dengan kecepatan tinggi
+```
