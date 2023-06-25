@@ -6,6 +6,14 @@
 
 ## Static Method
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-15-static https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\14-static
+```
 
 STATIC METHOD DAN PROPERTIES di TypeScript adalah metode dan properti yang dimiliki oleh kelas itu sendiri, bukan oleh objek yang dibuat dari kelas tersebut. STATIC METHOD DAN PROPERTIES dapat diakses tanpa membuat objek dari kelas, tetapi dengan menggunakan nama kelas sebagai prefiks¹. Untuk menambahkan STATIC METHOD DAN PROPERTIES ke kelas, kita menggunakan kata kunci **static** sebelum nama metode atau properti². Contoh:
 
