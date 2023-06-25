@@ -4,9 +4,21 @@
 
 </div>
 
-## Access Modifier
+## ABSTRACT CLASS
 
-Halo, ini adalah Bing. Saya dapat membantu Anda dengan pertanyaan Anda.😊
+</div>
+
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-13-access-modifier https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\12-access-modifier
+```
+
+referensi : <br>
+https://www.typescriptlang.org/docs/handbook/2/classes.html
 
 ACCESS MODIFIER di TypeScript adalah kata kunci yang digunakan untuk mengatur tingkat akses atau visibilitas dari properti atau metode dalam sebuah kelas. ACCESS MODIFIER dapat membantu kita untuk menyembunyikan detail implementasi dari pengguna dan mengontrol bagaimana properti atau metode dapat diakses dan dimodifikasi¹. TypeScript menyediakan tiga jenis ACCESS MODIFIER, yaitu:
 
