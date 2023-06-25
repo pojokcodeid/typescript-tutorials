@@ -1,7 +1,7 @@
 <div align="center">
   
 # TYPESCRIPT
-## NAMESPACE
+## CLASS
 
 </div>
 
@@ -13,76 +13,84 @@
 ```
 git clone -b part-11-class https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\10-class
 ```
+
 referensi : <br>
-https://www.typescriptlang.org/docs/handbook/namespaces.html
+https://www.typescriptlang.org/docs/handbook/2/classes.html#handbook-content
 
-Namespaces adalah cara khusus TypeScript untuk mengorganisir kode. Namespaces adalah objek JavaScript yang diberi nama di dalam namespace global. Hal ini membuat namespaces sangat sederhana untuk digunakan. Tidak seperti modul, mereka dapat mencakup beberapa file, dan dapat digabungkan menggunakan --outFile1.
+Class di TypeScript adalah sebuah fitur yang memungkinkan kita untuk membuat struktur data yang memiliki properti dan metode. Class juga dapat mewarisi sifat dari class lain dengan menggunakan kata kunci extends. Class di TypeScript mendukung fitur-fitur seperti constructor, field, method, access modifier, static member, abstract class, dan decorator
 
-Namespaces dapat digunakan untuk menyimpan antarmuka, kelas, fungsi, atau variabel yang berhubungan dengan suatu topik tertentu. Misalnya, kita dapat membuat namespace Validation untuk menyimpan validator string1. Untuk membuat namespace, kita gunakan kata kunci namespace diikuti dengan nama namespace. Untuk mengekspor anggota namespace agar dapat diakses di luar namespace, kita gunakan kata kunci export di depannya.
-
-## Reference Path
-
-contoh buat file data.ts
+Contoh class di TypeScript:
 
 ```ts
-namespace Mydata {
-  export function sayHello() {
-    console.log("Hello World 2");
+// Membuat class Employee dengan properti identifier dan method greet
+class Employee {
+  // Membuat field identifier dengan tipe string
+  identifier: string;
+
+  // Membuat constructor untuk menginisialisasi field identifier
+  constructor(identifier: string) {
+    this.identifier = identifier;
+  }
+
+  // Membuat method greet untuk menampilkan pesan sapaan
+  greet() {
+    console.log(`Hello, I am ${this.identifier}`);
+  }
+}
+
+// Membuat objek dari class Employee
+let emp1 = new Employee("Alice");
+let emp2 = new Employee("Bob");
+
+// Memanggil method greet dari objek emp1 dan emp2
+emp1.greet(); // Hello, I am Alice
+emp2.greet(); // Hello, I am Bob
+```
+
+## Cara Membuat Field
+
+Cara membuat field di class adalah dengan menulis nama field dan tipe datanya di dalam kurung kurawal yang mengapit definisi class. Field adalah variabel yang menyimpan data yang berkaitan dengan class. Field dapat memiliki hak akses seperti public, private, atau protected.
+
+## Konstruktor
+
+Konstruktor di TypeScript adalah sebuah metode khusus yang dipanggil saat kita membuat objek dari sebuah class. Konstruktor biasanya digunakan untuk menginisialisasi properti-properti dari class atau melakukan operasi-operasi awal1. Konstruktor dapat memiliki parameter dengan anotasi tipe, nilai default, dan overload
+
+## Membuat Objek
+
+Cara membuat objek dari class adalah dengan menggunakan kata kunci new yang diikuti dengan nama class dan tanda kurung. Objek adalah sebuah variabel yang menyimpan nilai dari sebuah class. Objek dapat mengakses properti dan metode yang ada di dalam class.
+
+```ts
+// Membuat objek dari class Employee
+let emp1 = new Employee("Alice");
+let emp2 = new Employee("Bob");
+
+// Memanggil method greet dari objek emp1 dan emp2
+emp1.greet(); // Hello, I am Alice
+emp2.greet(); // Hello, I am Bob
+```
+
+## Membuat Method
+
+Cara membuat method di class adalah dengan menulis nama method dan tipe kembalian (jika ada) di dalam kurung kurawal yang mengapit definisi class. Method adalah fungsi yang melakukan suatu tindakan atau operasi yang berkaitan dengan class. Method dapat memiliki parameter untuk menerima input dan return untuk mengembalikan output¹.
+
+Contoh membuat method di class:
+
+```typescript
+// Membuat class Employee dengan properti identifier dan method greet
+class Employee {
+  // Membuat field identifier dengan tipe string
+  identifier: string;
+
+  // Membuat constructor untuk menginisialisasi field identifier
+  constructor(identifier: string) {
+    this.identifier = identifier;
+  }
+
+  // Membuat method greet untuk menampilkan pesan sapaan
+  greet() {
+    console.log(`Hello, I am ${this.identifier}`);
   }
 }
 ```
 
-panggil pada file main.ts
-
-```ts
-/// <reference path="./data.ts" />
-
-Mydata.sayHello();
-```
-
-note :
-untuk menjalankan compile kita tidak bisa menggunakan
-
-```bash
-tsc -W
--- atau
-tsc
-```
-
-gunakan perintah berikut
-
-```bash
-tsc --outFile ./build/js/main.js ./src/main.ts -W
-```
-
-## menggunakan Module
-referensi <br>
-https://www.typescriptlang.org/docs/handbook/modules.html
-
-buat file data.ts
-
-```ts
-export namespace Mydata {
-  export function sayHello() {
-    console.log("Hello World 2");
-  }
-}
-```
-
-panggil pada file main.ts
-
-```ts
-import { Mydata } from "./data";
-
-Mydata.sayHello();
-```
-
-jalankan build dengan perintah
-
-```bash
-tsc -W
--- atau
-tsc
--- ata
-tsc --module commonjs -W
-```
+Terkait dengan access modifier, static member, abstract class, dan decorator di bahas dalam materi terpisah.
