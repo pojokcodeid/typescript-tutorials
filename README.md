@@ -4,7 +4,7 @@
 
 </div>
 
-## ABSTRACT CLASS
+## ACCESS MODIFIER
 
 </div>
 
