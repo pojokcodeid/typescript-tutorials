@@ -17,7 +17,7 @@ git clone -b part-12-abstractclass https://github.com/pojokcodeid/typescript-tut
 referensi : <br>
 https://www.typescriptlang.org/docs/handbook/2/classes.html
 
-Abstract class di TypeScript adalah class yang menggunakan kata kunci **abstract** dan biasanya digunakan untuk mendefinisikan struktur dan perilaku dari sekelompok class yang berhubungan, sehingga mereka memiliki antarmuka yang konsisten dan dapat digunakan secara interchangeably. Abstract class tidak dapat dibuat menjadi object, tetapi hanya dapat diturunkan oleh class lain. Abstract class biasanya mencakup satu atau lebih method atau properti abstract yang harus didefinisikan oleh class turunan. Contoh penggunaan abstract class di TypeScript adalah sebagai berikut:
+Abstract class di TypeScript adalah class yang menggunakan kata kunci **abstract** dan biasanya digunakan untuk mendefinisikan struktur dan perilaku dari sekelompok class yang berhubungan, sehingga mereka memiliki antarmuka yang konsisten. Abstract class tidak dapat dibuat menjadi object, tetapi hanya dapat diturunkan oleh class lain. Abstract class biasanya mencakup satu atau lebih method atau properti abstract yang harus didefinisikan oleh class turunan. Contoh penggunaan abstract class di TypeScript adalah sebagai berikut:
 
 ```typescript
 abstract class Hewan {
