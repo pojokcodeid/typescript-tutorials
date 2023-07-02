@@ -12,7 +12,7 @@
 - contoh
 
 ```
-git clone -b part-16-generik https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\14-generik
+git clone -b part-16-generik https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\15-generik
 ```
 
 ## GENERIC TYPES
