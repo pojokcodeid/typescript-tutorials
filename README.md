@@ -29,12 +29,15 @@ function identity<T>(arg: T): T {
 
 // memanggil fungsi generik dengan tipe string
 let output = identity<string>("Hello");
+console.log(output);
 
 // memanggil fungsi generik dengan tipe number
 let output2 = identity<number>(42);
+console.log(output2);
 
 // memanggil fungsi generik dengan inferensi tipe
 let output3 = identity("World"); // output3 bertipe string
+console.log(output3);
 ```
 
 ## GENERIC CONSTRAINTS
@@ -77,7 +80,7 @@ interface IProcessor<T> {
 
 // membuat kelas yang mengimplementasikan generic interface dengan tipe number
 class NumberProcessor implements IProcessor<number> {
-  result: number;
+  result: number = 0;
   process(a: number, b: number): number {
     this.result = a + b;
     return this.result;
@@ -88,7 +91,8 @@ class NumberProcessor implements IProcessor<number> {
 let np = new NumberProcessor();
 
 // memanggil metode process dengan argumen bertipe number
-np.process(10, 20); // 30
+let hasil = np.process(10, 20); // 30
+console.log(hasil);
 ```
 
 ## GENERIC CLASSES
@@ -106,7 +110,7 @@ class Stack<T> {
     this.items.push(element);
   }
   // menghapus elemen dari stack
-  pop(): T {
+  pop() {
     return this.items.pop();
   }
 }
