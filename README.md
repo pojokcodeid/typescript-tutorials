@@ -2,6 +2,15 @@
   
 # TYPESCRIPT
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-17-perulangan https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\16-perulangan
+```
+
 </div>
 
 ## OPERASI FOR LOOP
