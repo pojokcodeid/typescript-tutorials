@@ -1,6 +1,7 @@
 <div align="center">
   
 # TYPESCRIPT
+</div>
 
 - Clone Projeck
   perintah dasarnya : <br>
@@ -11,7 +12,7 @@
 git clone -b part-17-perulangan https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\16-perulangan
 ```
 
-</div>
+
 
 ## OPERASI FOR LOOP
 
