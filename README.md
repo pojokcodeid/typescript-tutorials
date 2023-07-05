@@ -4,6 +4,16 @@
 
 </div>
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-18-percabangan https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\17-percabangan
+```
+
+
 ## OPERASI IF
 
 TypeScript if adalah pernyataan yang digunakan untuk mengeksekusi suatu blok kode berdasarkan kondisi tertentu. Jika kondisi bernilai true, maka blok kode di dalam if akan dieksekusi. Jika kondisi bernilai false, maka blok kode di dalam if akan dilewati.
