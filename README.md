@@ -10,7 +10,7 @@
 - contoh
 
 ```
-git clone -b part-08-array-tuples https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\07-array-tuples
+git clone -b part-19-array-tuples https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\18-array-tuples
 ```
 
 # ARRAY DAN TUPLE
