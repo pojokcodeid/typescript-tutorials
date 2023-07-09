@@ -4,6 +4,15 @@
 
 </div>
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-20-enum https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\19-enum
+```
+
 ## Enum
 
 Enum di TypeScript adalah tipe data yang mendefinisikan sekumpulan konstanta yang memiliki nama. Konstanta ini dapat berupa nilai numerik atau string. Enum adalah salah satu fitur TypeScript yang bukan merupakan ekstensi tipe dari JavaScript, tetapi fitur khusus TypeScript. Enum dapat membantu mendokumentasikan maksud atau membuat kasus-kasus yang berbeda¹. TypeScript menyediakan enum numerik dan string.
