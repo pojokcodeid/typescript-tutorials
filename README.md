@@ -11,7 +11,7 @@
 
 ```
 git clone -b part-21-union https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\20-union
-``
+```
 
 ## Union
 
