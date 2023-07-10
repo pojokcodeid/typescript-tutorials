@@ -4,6 +4,15 @@
 
 </div>
 
+- Clone Projeck
+  perintah dasarnya : <br>
+  git clone -b nama-branch link-repo dir-tujuan
+- contoh
+
+```
+git clone -b part-21-union https://github.com/pojokcodeid/typescript-tutorials.git C:\typescript-tutorial\20-union
+``
+
 ## Union
 
 
